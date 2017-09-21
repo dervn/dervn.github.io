@@ -9,6 +9,10 @@ tags:
   - BPM
 ---
 
+SIT（System Integration Testing）是集成测试，UAT（User Acceptance Test）是验收测试
+
+<!--more-->
+
 ![图示](/assets/201709/98564897b2907c3abeb2ef3dd2132c61.jpg)
 
 SIT（System Integration Testing）是集成测试，UAT（User Acceptance Test）是验收测试。从时间上看，UAT要在SIT后面，UAT测试要在系统测试完成后才开始。从测试人员看，SIT由公司的测试员来测试，而UAT一般是由用户来测试。
