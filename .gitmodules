@@ -1,3 +1,6 @@
 [submodule "themes/bootstrap-blog"]
 	path = themes/bootstrap-blog
 	url = git@github.com:dervn/hexo-theme-bootstrap-blog.git
+[submodule "themes/hacker"]
+	path = themes/hacker
+	url = git@github.com:dervn/Hacker.git
