@@ -3,8 +3,7 @@ title: 三种类型的Web平台
 url: 406759.html
 id: 406759
 categories:
-  - 日常。笔记
-  - 互聯網
+  - 互联网
 date: 2007-09-20 03:41:59
 tags:
 ---

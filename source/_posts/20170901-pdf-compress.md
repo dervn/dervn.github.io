@@ -1,7 +1,7 @@
 ---
 title: "PDF压缩，一个简单的付费场景"
 categories:
-  - 日常。笔记
+  - 互联网
 date: 2017-09-01
 tags:
   - PDF
