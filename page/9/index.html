@@ -67,6 +67,134 @@
 
   
     
+    <h3 class="article-title"><a href="/2009/07/20/sort-a-3-b-1-c-2/"><span>[(&#39;a&#39;, 3), (&#39;b&#39;, 1), (&#39;c&#39;, 2)] 按照第二项排序</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2009/07/20/sort-a-3-b-1-c-2/" rel="bookmark">
+        <time class="entry-date published" datetime="2009-07-19T17:56:10.000Z">
+          2009-07-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <pre>
+
+"""
+[('a', 3), ('b', 1), ('c', 2)] 按照中间元组的第二项排序
+"""
+def my_cmp(E1, E2):
+    return cmp(E1[1], E2[1]) #compare weight of each 2-tuple
+    #return the negative result of built-in cmp function
+    #thus we get the descend order
+L = [('a',3),('b',1),('c',2)]
+L.sort(my_cmp)
+print L
+list = [('a', 3), ('b', 1), ('c', 2)]
+list.sort( key=lambda x: x[1] )
+print list
+
+</pre>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/日常。笔记/">日常。笔记</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/python/">python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2009/05/14/e5-97-af-e3-80-82-e4-bc-98-e5-8a-bf-e4-b8-8d-e9-a1-bb-e5-a4-9a/"><span>嗯。优势不须多</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2009/05/14/e5-97-af-e3-80-82-e4-bc-98-e5-8a-bf-e4-b8-8d-e9-a1-bb-e5-a4-9a/" rel="bookmark">
+        <time class="entry-date published" datetime="2009-05-13T20:02:00.000Z">
+          2009-05-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>优势不须多，如此两项就可：</p><p>1. 邮件发表文章<br>2. 绑定域名</p><p>嗯。外加一条，免费。。当然界面的简洁也是卖点。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Uncategorized/">Uncategorized</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2009/05/11/e4-b9-a6-e4-ba-ba-e4-ba-8b/"><span>书+人+事</span></a></h3>
     
   
@@ -435,6 +563,7 @@
       
         <p>SNS大行其道的今天，诸如博客[blogger.com]，相册这样的单纯的纯粹的互联网基础服务也许会在未来的某个时刻大放奇彩。简单深刻的的做到极至，做成人人离不了的服务。【Twitter.com 已经基本上证明的这一点】</p>
 <div id=":ht" class="ii gt">博客[a.com][附带图片服务，绑定b.com]<br><br>基本功能：<br><br>博客发表，修改，分类，标签，显示模板<br>隐私控制，｛可控制整个博客的不对外访问，以及密码访问，公开访问｝｛文章级别的隐藏，密码访问｝<br>导入，导出｛诸如wordpress的导出文件格式的直接导入，blogger.com类的基于api的导入｝<br>Email发表<br>XMLRPC支持，以使诸如live writer这样的工具能直接发表博客。<br><br>高级功能：<br><br>从b.com中直接插入图片，或者能直接上传图片到b.com，并且直接插入文章中。<br>团队博客服务，｛一个博客，多人发表｝<br>家庭博客服务，｛多个博客，聚合｝<br>专题，｛可选择投稿到某个专题｝｛或可和商家服务，做成某种软文广告，供用户发表都某样产品的体验文章，推广产品｝<br>域名的绑定<br><br>盈利模式<br><br>模板的隐性广告的植入<br>商家专题合作<br>VIP用户服务｛绑定域名等｝<br><br>竞争对手分析<br><br>新浪，163这样的大鳄<br>blogbus,yo2，不老歌这样的已经有了大批拥棒的专业bsp<br><br>优势</div><br><div class="ii gt">专注专业，挖掘博客潜力。</div><br><div class="ii gt"></div><br><div class="ii gt"><span style="color:#ff0000;">update</span>:</div><br><div class="ii gt">对诸如手机等的掌上设备的支持。</div><br><div class="ii gt">手机图片博客。</div>
+
       
     </div>
 
@@ -448,7 +577,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>, <a href="/categories/日常。笔记/互聯網/">互聯網</a>
+        <a href="/categories/互联网/">互联网</a>
     </span>
     
 
@@ -572,163 +701,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/戏曲/">戏曲</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2009/03/10/reading-note-prd-pm/"><span>阅读笔记：产品经理需求设计攻略</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2009/03/10/reading-note-prd-pm/" rel="bookmark">
-        <time class="entry-date published" datetime="2009-03-09T22:47:47.000Z">
-          2009-03-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>阅读笔记，放在电子时代之前叫做抄书。</p>
-<p><strong>把别人的见识和经验变成自己所掌握的知识。</strong></p>
-<p><strong>————————————</strong></p>
-<p><strong>产品经理需求设计攻略</strong></p>
-<p><em>工欲善其事，必先利其器。</em></p>
-<p><strong>工具</strong>：</p>
-<p>RationalRose（powerdesigner也可以吧，还可以做数据库的设计），设计用户交互图，这是用文字永远也没法说清楚的问题，深有体会。</p>
-<p>Axure：页面结构设计。不错的玩意。有个东西叫做<a href="http://www.balsamiq.com/" target="_blank" rel="external">BalsamiqMockups</a>的也不错，手绘风格。</p>
-<p>其他MindManager，word</p>
-<p>随便了，原则上是只要能说明问题就OK。</p>
-<p><strong>需求分析</strong></p>
-<p>头脑风暴阶段。</p>
-<p>我们要做什么，工具还是平台？我们的用户是什么？目的是什么？目标客户群，用户群体是什么？产品的功能？盈利模式？已经公司的人力，物力，产品周期【或许就是说，什么情况下这个项目必须被放弃，已经后续的出路。】</p>
-<p><strong>竞争对手分析</strong></p>
-<p>分析当前市场上的竞争局势。每家的优缺点，已经运营状况。确定我们要做的产品和我们的差异化优势。</p>
-<p>说白了，就是如何立足，然后最好能干掉对方。</p>
-<p><strong>产品设计</strong></p>
-<p>使用MindManager来画产品的功能结构图。将想法在纸面上落实下来。</p>
-<p><strong>功能设计</strong></p>
-<p>用户的产品使用流程，交互，权限等的设计。</p>
-<p>分级，划分出核心功能和其他的扩展框架。</p>
-<p><strong>页面设计</strong></p>
-<p>Axure画出页面的结构图。这是页面设计师搞出来页面的基础，也可以看做是页面的设计原型图。</p>
-<p>有图如下：<br><a href="http://picasaweb.google.com/s/c/bin/slideshow.swf" target="_blank" rel="external">http://picasaweb.google.com/s/c/bin/slideshow.swf</a><br><strong>————————————</strong></p>
-<p>有事逛5G，偶得之。[话说，牛人和吹牛皮的人都很多。]</p>
-<p>产品经理PRD需求实战攻略 来自 <a href="http://hi.baidu.com/feejie" target="_blank" rel="external">http://hi.baidu.com/feejie</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/产品/">产品</a><a href="/tags/需求设计/">需求设计</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2009/03/09/data-soft-version-sync/"><span>软件版本和数据同步</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2009/03/09/data-soft-version-sync/" rel="bookmark">
-        <time class="entry-date published" datetime="2009-03-08T20:31:29.000Z">
-          2009-03-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><strong>客户端的数据同步。</strong></p>
-<p>比如照片，我希望可以同步存储到网络上面（便于分享），可是我又希望能在本地电脑上面留一份（作为备份，同时也便于查看修理），同时两份数据能保持一致。</p>
-<p>另外，手机拍下来的照片能方便的上传到网络上面。</p>
-<p><strong>网络软件的C/S模式的版本和数据同步。</strong></p>
-<p>现在使用的wordpress其实可以看做一个客户端（虽然是安装在网络上面的），如果wordpress的发布者能提供一个很好的数据同步的功能，可以把数据一键同步到官方网站，那麽我每次chong重新安装WP的时候就不须考虑如何恢复数据的问题，同时也是一个很好的数据备份方式，另外评论之类的东西也不至于丢失了，链接也不至于每次都要重新添加。</p>
-<p>现在WP的软件一键更新就做的很好。</p>
-<p><strong>apt-get，**</strong>wget**</p>
-<blockquote>
-<p>apt-get是一条linux命令，适用于deb包管理式的操作系统，主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</p>
-<p>wget是一个从网络上自动下载文件的自由工具。<br>这两个命令真真让我对使用LINUX心里痒痒的，从事非M$相关的工作和学习的最好方式了。虽然没法运行想WOW，EVE这样的大型游戏。</p>
-</blockquote>
-<p><strong>书籍内容数据的分享</strong></p>
-<p>自己搞个书站小说系统，然后每天定时更新书籍章节内容，保持和作者发布的同步，然后同步分发到使用同样小说系统的其他网站（或者说客户）那里去。解决了万千站长的数据更新之忧（此法有风险，慎入）。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/产品/">产品</a><a href="/tags/软件/">软件</a><a href="/tags/IDEA/">IDEA</a><a href="/tags/数据同步/">数据同步</a>
     </span>
     
 

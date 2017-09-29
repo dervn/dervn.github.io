@@ -67,6 +67,147 @@
 
   
     
+    <h3 class="article-title"><a href="/2010/05/27/gae-upload-csv/"><span>GAE使用CSV格式上传数据</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2010/05/27/gae-upload-csv/" rel="bookmark">
+        <time class="entry-date published" datetime="2010-05-27T00:40:52.000Z">
+          2010-05-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>首先,在app.yaml中添加</p>
+<blockquote>
+<ul>
+<li>url: /remote_api<br>&nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py<br>&nbsp; login: admin  </li>
+</ul>
+</blockquote>
+<p>添加test_loader.py</p>
+<blockquote>
+<p>import datetime<br>from google.appengine.ext import db<br>from google.appengine.tools import bulkloader </p>
+<p>class Test(db.Model):<br>&nbsp; id = db.IntegerProperty()<br>&nbsp; name = db.StringProperty()<br>&nbsp; desc = db.StringProperty() </p>
+<p>class TestLoader(bulkloader.Loader):<br>&nbsp; def <strong>init</strong>(self):<br>&nbsp;&nbsp;&nbsp; bulkloader.Loader.<strong>init</strong>(self, ‘Test’,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(‘id’, int)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,(‘name’, str)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,(‘desc’,lambda x: unicode(x, “utf-8”))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]) </p>
+<p>loaders = [TestLoader]  </p>
+</blockquote>
+<p>上传批处理命令</p>
+<blockquote>
+<p>cd C:\Program Files\Google\google_appengine<br>appcfg.py upload_data –config_file=test_loader.py –filename=test.csv –kind=Test –auth_domain=xxx.com –url=<a href="http://www.xxx.com/remote_api" target="_blank" rel="external">http://www.xxx.com/remote_api</a> D:\xxx  </p>
+</blockquote>
+<p>尝试尝试在尝试。终于好了。基本上是按照官方文档来的，但是不管是不小心还是咋滴，总会有问题。但是所幸，功夫不负有心人！！</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Uncategorized/">Uncategorized</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/python/">python</a><a href="/tags/GAE/">GAE</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2010/05/24/e3-81-9f-e3-82-93-e3-81-bd-e3-81-bd-e3-80-8d-e8-92-b2-e5-85-ac-e8-8b-b1/"><span>たんぽぽ」蒲公英</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2010/05/24/e3-81-9f-e3-82-93-e3-81-bd-e3-81-bd-e3-80-8d-e8-92-b2-e5-85-ac-e8-8b-b1/" rel="bookmark">
+        <time class="entry-date published" datetime="2010-05-24T01:52:46.000Z">
+          2010-05-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>たんぽぽ」蒲公英 </p>
+<p>作词∶游助</p>
+<p>作曲∶イイジマケン/ピエール/游助</p>
+<p>歌∶游助<br> <a href="http://www.tudou.com/v/xAiodO7qyFg/v.swf" target="_blank" rel="external">http://www.tudou.com/v/xAiodO7qyFg/v.swf</a>  </p>
+<p>仆(ぼく)らは同(おな)じ时代(じだい)に偶然(ぐうぜん)生(う)まれてきた<br>我们偶然诞生于同一个时代<br>亲(おや)の胸(むね)に抱(だ)かれ 爱(あい)され生(い)きてきた<br>被双亲怀抱爱护生存至今<br>仆(ぼく)らは広(ひろ)い地球(ちきゅう)で偶然(ぐうぜん)惹(ひ)かれあって<br>在广阔的地球上偶然间互相吸引<br>これから先(さき)共(とも)に生(い)きると誓(ちか)ったんだ<br>我们发誓从此以后同生共死<br>仆(ぼく)が死(し)ぬまでは 生(い)きてると ささやいてくれたあの日(ひ)の夜中(よなか)<br>直到我死去前 轻语告诉我“我们活着”的那晚<br>街灯(がいとう)の下(した)で决(き)めた 谁(だれ)より生(い)きてやる<br>在路灯下 我决定了 要比谁都活的自我<br>爱(あい)してるっちゅう手纸(てがみ)<br>寄予着爱恋之吻的信<br>不器用(ぶきよう)なこんな仆(ぼく)に<br>给这样不中用的我<br>优(やさ)しくチューする女神(めがみ)<br>温柔的吻的女神<br>闻(き)いたら胸(むね)にしまっといて<br>听到的话 请谨记心中<br>あぁこの歌(うた)に托(たく)すぞ<br>寄托于这首歌的<br>幸(しあわ)せの誓(ちか)い<br>幸福的誓言<br>仆(ぼく)らは同(おな)じ时间(じかん)を手(て)を取(と)り过(す)ごしてきた<br>我们握着手度过相同的时间<br>どんなに辛(つら)く苦(くる)しいときも离(はな)さずに<br>不管多辛苦多难过也不放开<br>気付(きづ)いていたんだ仆(ぼく)ら 幸(しあわ)せになることを<br>当我们发现 我们已经得到幸福<br>お互(たが)い爷(じい)ぃ婆(ばば)ぁになっても笑(わら)ってんぞ<br>即便那时我们都变成老婆婆老爷爷 也欢笑吧<br>いつの日(ひ)か2人ケンカして シンとなり家(いえ)出(で)たおまえを<br>某天我们吵架愤而出走的你<br>チャリンコ(ちゃりんこ)を漕(こ)いで见付(みづ)け ごめんて手(て)握(にぎ)った<br>故意按响自行车的铃让我发现你 握住手说 对不起<br>爱(あい)してるっちゅう手纸(てがみ)<br>寄予着爱恋之吻的信<br>不器用(ぶきよう)なこんな仆(ぼく)に<br>给这样不中用的我<br>优(やさ)しくチューする女神(めがみ)<br>温柔的吻的女神<br>闻(き)いたら胸(むね)にしまっといて<br>听到的话请放在心中<br>あぁこの歌(うた)に托(たく)すぞ<br>寄托于这首歌的<br>幸(しあわ)せの誓(ちか)い<br>幸福的誓言<br>あんがとな亲父(おやじ)と生(う)んでくれたお袋(ふくろ)<br>安静地躺着的父亲 和生我的母亲<br>なんだかんだ俺(おれ)でもこいつ见(み)つけた———-这句不太确定- -|||<br>连我这样（不中用）的人 都能被发现。。。。（大概就是说感谢父母生出了我吧）&#160;<br>昔(むかし)からの仲间(なかま)や世话(せわ)になった方々(かたがた)<br>以前的伙伴和帮助过我的人们<br>これからも様々(さまさま)なことがあるでしょう<br>今后也会遇上各种各样不同的人吧<br>远（とお)くなったあの人(ひと) 今(いま)も胸(むね)の中(なか)にも<br>离我远去的人 至今不曾遗忘<br>ちゃんときっとずっと一绪(いっしょ) どんな时(とき)でも<br>无论何时 一定会好好地（把你们放在心中）&#160;<br>もしいるなら神様(かみさま) 届(とど)けたいよ花束(はなたば)<br>如果神明真的存在 请为我送上花束<br>春(はる)生(う)まれのタンポポ そして言(い)うよ 何度(なんど)も<br>春天生长的蒲公英 （在信中）反复地说着<br>ありがとうっちゅう手纸(てがみ)&#160;<br>寄予着感谢之吻的信<br>心(こころ)からのありがとう<br>从内心发出的感谢<br>でも最初(さいしょ)で最后(さいご)の手纸(てがみ)<br>这是第一封也是最后的信了<br>耻(は)ずかしいから一度(いちど)だけ<br>有点害羞啊 所以就仅此一次吧<br>あぁこの歌(うた)に托(たく)すよ<br>啊 寄托于这首歌的<br>幸(しあわ)せの誓(ちか)い<br>幸福的誓言<br>あぁこの言叶(ことば)に托(たく)すよ<br>啊 寄托于这些话语的<br>はじめての手纸(てがみ)<br>第一封信</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/影视。音乐/">影视。音乐</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/音乐/">音乐</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2010/05/13/e6-9d-9c-e6-8b-89-e6-8b-89-e5-8d-87-e8-81-8c-e8-ae-b0/"><span>杜拉拉升职记</span></a></h3>
     
   
@@ -618,133 +759,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/寻找/">寻找</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2009/10/16/my-life-as-a-dog/"><span>狗脸的岁月</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2009/10/16/my-life-as-a-dog/" rel="bookmark">
-        <time class="entry-date published" datetime="2009-10-15T18:03:06.000Z">
-          2009-10-16
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>J。 说 (17:07):<br> 。。。。<br> 你是鼓励我买一个么<br>D。 说 (17:08):<br>&#160; *-)<br>J。 说 (17:08):<br> 好吧等我有钱了我会买一个的。<br>D。 说 (17:11):<br> 啊哦。我好没品。<br>J。 说 (17:12):<br> -0-<br>D。 说 (17:24):<br> 有时候和别人说话的时候，突然就哑了。<br>J。 说 (17:25):<br> 你嗓子坏了啊<br>D。 说 (17:25):<br> 貌似汽车开到半路，突然熄火，然后也不会修车。只能坐那静静的等着。也不会抽烟。空气都停顿了。<br> 这啥感觉。。<br>D。 说 (17:26):<br> 然后边上的人就特压抑。。<br>J。 说 (17:26):<br> 你真文艺-<br>D。 说 (17:26):<br> 然后就不理我了。。<br> 然后我就闷闷的发动汽车走了<br>J。 说 (17:26):<br> lol<br> lol<br>D。 说 (17:28):<br> 然后我就想找个地方发泄一下，心里闷闷的。。<br> 然后我还找不到地方。到处都是人。我不好意思。<br> 哦也。<br> 终于知道我在干吗了。<br>J。 说 (17:28):<br> 你抑郁了<br>D。 说 (17:29):<br> 你可以无视我。<br>J。 说 (17:30):<br> 无所 反正要下班了。<br>D。 说 (17:30):<br> 我现在好了。感谢<br>J。 说 (17:31):<br> -o-<br>D。 说 (17:32):<br> 去写篇文章，题目就叫，一个非文清的自白<br>J。 说 (17:32):<br> 你最近抑郁么<br>D。 说 (17:32):<br> 啊。没啊<br>J。 说 (17:32):<br> 所噶<br>D。 说 (17:33):<br> 这十年来一直都很郁闷。不止最近。</p>
-<strike>PS:这是一段无聊的聊天记录，发生于将下班的前夕。</strike>
-
-<strike>套用了升哥的这个标题，同时竟然发现有部电影就叫这个名字。世界很奇妙。</strike>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/生活/">生活</a><a href="/tags/聊天/">聊天</a><a href="/tags/闷/">闷</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2009/10/10/834-m874/"><span>名词解释：834 M874</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2009/10/10/834-m874/" rel="bookmark">
-        <time class="entry-date published" datetime="2009-10-09T18:13:43.000Z">
-          2009-10-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>据称，834：如果这个不知道是什么，估计你脱节2年有余，或者是NGA新进2年班的；M874：这个更简单，但如果不知道，可能脱节有5年以上了。   </p>
-<h4 id="834"><a href="#834" class="headerlink" title="834"></a>834</h4><p>在游戏魔兽世界中，834用来指代神圣天赋的圣骑士。由于在魔兽世界中，受到副本需求、传统观念以及惩戒、防护天赋本身的一些缺陷的制约，使得大量的骑士只能够用神圣天赋作为一个治疗者而在团队中存在。这也使得在暴雪对美服各职业天赋的调查统计中，神圣骑士惊人地占到了骑士玩家总量的83.4%的比例。由此，神圣骑士往往自嘲自己是834男。</p>
-<h5 id="M874"><a href="#M874" class="headerlink" title="M874"></a>M874</h5><p>那是一个不存在的地方，据称是奥特曼的故乡。如是，你可称自己为M874星人。从此，变成奥特曼的老乡。</p>
-<p>&#160;</p>
-<p>PS：一段骑士小说的开头。</p>
-<p>在那个悲剧的年代，来自M874的奥特曼加入到了悲哀的神圣骑士的中间。。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Wow/">Wow</a><a href="/tags/奥特曼/">奥特曼</a>
     </span>
     
 
