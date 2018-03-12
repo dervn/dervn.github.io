@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>redmine | 凉白开 | Just another Hexo site</title>
+
+  
+  <meta name="author" content="dervn">
+  
+
+  
+  <meta name="description" content="Redmine升级和安装操作记录">
+  
+
+  
+  
+  <meta name="keywords" content="redmine">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="redmine"/>
+
+  <meta property="og:site_name" content="凉白开"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">凉白开</a>
+    </h1>
+    <p class="site-description">Just another Hexo site</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+        <li><a href="/about/">关于</a></li>
+      
+        <li><a href="https://dervn.github.io/wiki/">Wiki</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>redmine</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/12/20180312-redmine/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-11T16:00:00.000Z">
+          2018-03-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Redmine升级和安装操作记录</p>
+<a id="more"></a>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ol>
+<li>备份3.0.1文件，包括<ul>
+<li>数据库SQL</li>
+<li>files目录中的上传文件</li>
+<li>config目录下配置文件</li>
+<li>plugins目录下所有文件</li>
+</ul>
+</li>
+</ol>
+<h2 id="Windows安装包执行恢复数据步骤"><a href="#Windows安装包执行恢复数据步骤" class="headerlink" title="Windows安装包执行恢复数据步骤"></a>Windows安装包执行恢复数据步骤</h2><ol>
+<li>执行exe文件 (windows)  <a href="https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe" target="_blank" rel="external">https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe</a></li>
+<li><p>创建新数据库 redmine_new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE redmine CHARACTER SET utf8;</div><div class="line">CREATE USER &apos;redmine&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;my_password&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine.* TO &apos;redmine&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>redmine主目录执行db升级命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set RAILS_ENV=production</div><div class="line">bundle exec rake db:migrate</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启服务</p>
+</li>
+</ol>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
+<li>下载最新安装包 3.3.6 <a href="http://www.redmine.org/releases/redmine-3.3.6.tar.gz" target="_blank" rel="external">http://www.redmine.org/releases/redmine-3.3.6.tar.gz</a> (md5: 103bcfc7a0603815130fba8626c97661)，解压文件到安装目录</li>
+<li>将插件文件放到plugins目录</li>
+<li><p>进入安装目录，执行 如下命令</p>
+<figure class="highlight plain"><figcaption><span>install --path vendor/bundle --without development test```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">当前linux系统安装Mysql</div><div class="line">* 创建数据库</div><div class="line">```CREATE DATABASE redmine336 CHARACTER SET utf8mb4;</div><div class="line">CREATE USER &apos;redmine336&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;abcd.1234&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine336.* TO &apos;redmine336&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行3.0.1版本的备份SQL,文件 bitnami_redmine.sql</p>
+</li>
+<li>修改config/database.yml，修改production节点下数据库配置为当前设置</li>
+<li><p>执行db迁移命令  </p>
+<figure class="highlight plain"><figcaption><span>exec rake db:migrate RAILS_ENV</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">* 执行插件DB迁移命令， 【如新环境无新插件可不执行】</div><div class="line">```bundle exec rake redmine:plugins:migrate RAILS_ENV=production</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改config/configuration.yml文件中邮件配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    delivery_method: :smtp</div><div class="line">    smtp_settings:</div><div class="line">      address: smtp.163.com</div><div class="line">      port: 25</div><div class="line">      authentication: :login</div><div class="line">      domain: smtp.163.com</div><div class="line">      user_name: ucfdev@163.com</div><div class="line">      password: 7788jira</div><div class="line">      enable_starttls_auto: false</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight plain"><figcaption><span>exec rake generate_secret_token```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* LINUX文件系统写权限</div><div class="line">```mkdir -p tmp tmp/pdf public/plugin_assets</div><div class="line">sudo chown -R redmine:redmine files log tmp public/plugin_assets</div><div class="line">sudo chmod -R 755 files log tmp public/plugin_assets</div></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝备份文件目录 files到新环境下</p>
+</li>
+<li>启动测试 ，访问<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a><figure class="highlight plain"><figcaption><span>exec rails server webrick -e production -b 0.0.0.0 -p 3001```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">## 其他参考</div><div class="line">* Redmine 下载地址 http://www.redmine.org/projects/redmine/wiki/Download</div><div class="line">* Redmine 安全问题 http://www.redmine.org/projects/redmine/wiki/Security_Advisories</div><div class="line">* Redmine 安装步骤 http://www.redmine.org/projects/redmine/wiki/RedmineInstall</div><div class="line">* Redmine 升级安装  http://www.redmine.org/projects/redmine/wiki/* RedmineUpgrade</div><div class="line">* 安装包下载地址 https://bitnami.com/stack/redmine/installer</div><div class="line">    * WINDOWS https://bitnami.com/redirect/to/179030/bitnami-   redmine-3.4.4-2-windows-installer.exe</div><div class="line">    *LINUX https://bitnami.com/redirect/to/179023/bitnami-redmine-3.4.4-2-linux-x64-installer.run</div><div class="line">* 手动部署步骤 https://www.cnblogs.com/colder219/p/7158294.html</div><div class="line">* CentOS7 安装包大致步骤 http://www.cr173.com/html/50478_1.html</div><div class="line">* 邮件配置 https://www.jianshu.com/p/e220924d17b6</div><div class="line"> Install Redmine with Nginx, Puma, and MariaDB/MySQL on Ubuntu 14.04 https://blog.rudeotter.com/install-redmine-with-nginx-puma-and-mariadbmysql-on-ubuntu-14-04/</div><div class="line">* Nginx 通过 passenger-install-nginx-module 安装的 nginx 和直接安装的 nginx 有什么区别？ https://ruby-china.org/topics/16303</div><div class="line">* Redmine 性能优化方案 https://www.cnblogs.com/ToDoToTry/p/4462609.html</div><div class="line">* MYSQL ERROR 2003 (HY000): Can&apos;t connect to MySQL server on &apos;192.168.10.210&apos; (111) 解决方法 https://www.cnblogs.com/zihanxing/p/7049244.html</div><div class="line">* Runs server as a Daemon -d</div><div class="line">/usr/local/rvm/gems/ruby-2.3.6/bin/bundle exec /usr/local/rvm/gems/ruby-2.3.6/bin/rails server webrick -e production -b 0.0.0.0 -p 80 -d </div><div class="line">* Nginx 反向代理</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>server {<br>    listen 80;<br>    server_name redmine.xxx.com;<br>    access_log  logs/redmine_access.log main;<br>    error_log  logs/redmine_error.log;<br>    location / {<br>        proxy_pass <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>;<br>    }<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">* 找到占用端口 lsof -i tcp:3000  </div><div class="line">    * lsof -i:3000</div><div class="line">    * netstat -anp | grep 80</div><div class="line">    * 杀死进程 kill -9 92372 【92372是pid】</div><div class="line">* rvm use 2.3.6 --default # 设施rvm默认使用的ruby版本</div><div class="line">* Redmine 3.3.x does not support Ruby 2.4. Please use Ruby 2.3. Ruby 2.4 will be supported in upcoming Redmine 3.4.0</div><div class="line">* 检查配置文件，你看到的不一定就是正确的格式</div><div class="line">```RE: occurred Error when start redmine /usr/local/ruby/lib/ruby/2.1.0/psych.rb:370:in `parse&apos;: (&lt;unknown&gt;): mapping values are not allowed in this context at line 20 column 22 (Psych::SyntaxError) - 由 Leonel Iturralde 在 将近 3 年 之前添加</div><div class="line">I think there is a mistake in your yaml files. For example: configuration.yml, database.yml</div><div class="line">Check your yaml files.</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>Specified key was too long; max key length is 767 bytes  【类似问题需要检查系统要求的数据库版本，创建数据库的时候的编码方式，ruby软件版本】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INNODB utf8 VARCHAR(255)</div><div class="line">INNODB utf8mb4 VARCHAR(191)</div><div class="line">because 767 / 4 ~= 191 , and 767 / 3 ~= 255</div><div class="line">The number of allowed characters just depends on your character set. UTF8 may use up to 3 bytes per character, utf8mb4 up to 4 bytes, and latin1 only 1 byte. Thus for utf8 your key length is limited to 255 characters, since 3*255 = 765 &lt; 767.</div></pre></td></tr></table></figure>
+</li>
+<li><p>sudo su - #切换到root账户</p>
+<ul>
+<li>su redmine #使用某个账户</li>
+</ul>
+</li>
+<li>SecureCRT    sz rz  【sudo spctl –master-disable】<ul>
+<li>Session LOG文件配置  ../Logs/%H/%Y-%M-%D_%h%m%s.log</li>
+</ul>
+</li>
+<li>mysqldump -h132.72.192.432 -P3307 -uroot -p htgl&gt;d:\htgl.sql;</li>
+<li>Redmine开启LDAP认证 <a href="http://www.pfeng.org/archives/580" target="_blank" rel="external">http://www.pfeng.org/archives/580</a></li>
+<li>Redmine LDAP配置 <a href="http://www.redmine.org/projects/redmine/wiki/redmineldap" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/redmineldap</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/redmine/">redmine</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 dervn
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
