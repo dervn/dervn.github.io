@@ -11,7 +11,6 @@ tags:
 
 Django项目部署
 
-<!-- more -->
 
 ## Centos7安装Python3的方法(与python2共存)
 1. 依赖包安装
