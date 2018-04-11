@@ -1,13 +1,11 @@
 ---
-title: redmine
+title: Redmine
 date: 2018-03-12
 tags:
   - redmine
 ---
 
 Redmine升级和安装操作记录
-
-<!--more-->
 
 ## 备份
 1. 备份3.0.1文件，包括
