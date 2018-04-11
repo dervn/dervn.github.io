@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="凉白开">
+<meta property="og:url" content="http://dervn.github.io/page/58/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="凉白开">
+  
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-micolog" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/13/micolog/">micolog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2010/05/13/micolog/" class="article-date">
+  <time datetime="2010-05-12T19:54:54.000Z" itemprop="datePublished">2010-05-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一直看<a href="http://micolog.xuming.net" target="_blank" rel="external">micolog</a>的模板不爽，终于花了点时间把<a href="http://www.small-island.org/" target="_blank" rel="external">呼呼堂</a>的模板拔下来。现在看着点还像回事。</p>
+<p>改了几处micolog的代码，记一下。免得下次代码升级忘记了：</p>
+<ul>
+<li><p>blog.py中的m_list_pages 读取页面列表前后都有&lt;li&gt;标签写死了，删除之，直接用空格分开。</p>
+</li>
+<li><p>获取Archives的函数给写死只读取12条记录，archives=Archive.all().order(‘-year’).order(‘-month’)#.fetch(12)</p>
+</li>
+<li><p>后台设置中的，默认结构化链接和结构化链接(Permalink)两个项目不明，修改不了。</p>
+</li>
+<li><p>Page的地址竟成了<a href="http://d9.appspot.com/2008/05/6/about.html" title="http://d9.appspot.com/2008/05/6/about.html" target="_blank" rel="external">/2008/05/6/about.html</a> 这种，不爽。</p>
+</li>
+<li><p>micolog现在可算是最好的GAE博客程序了。插件和模板体制都差不多完善了。但是可以改进的地方还是很多的，就如上面说的函数调用的灵活性方面还有待加强。</p>
+</li>
+<li><p>模板亟需能上传，就不用改一次模板就要重新上传整个程序了。</p>
+</li>
+<li><p>程序更新方面，能在线更新就好了</p>
+</li>
+<li><p>一个算不上BUG的大问题，设置了一个模板之后，比如次模板名为ta;然后重新上传程序的时候，ta这个模板被删除了。然后在访问网站，会发现整站崩溃了。这种情况下是不是可以判断一下模板是否存在，否则读取默认或者提示用户重新设置模板。</p>
+</li>
+</ul>
+<p>令，wp导入数据的两个后遗症：</p>
+<ul>
+<li><p>postname中出现中文编码的地方会出现404</p>
+</li>
+<li><p>原有文章中需要p,br标签分开的地方都没加。导致现在无格式。</p>
+</li>
+</ul>
+
+      
+
+      
+
+    </div>
+  </div>
+  
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/57/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="page-number current">58</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/page/226/">226</a><a class="extend next" rel="next" href="/page/59/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

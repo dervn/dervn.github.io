@@ -1,672 +1,235 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
-  <title>第 2 页 | 凉白开 | Just another Hexo site</title>
-
+  <title>凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="凉白开">
+<meta property="og:url" content="http://dervn.github.io/page/2/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="凉白开">
   
-  <meta name="author" content="dervn">
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
   
-
   
-
+    <link rel="icon" href="/favicon.png">
   
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  
-
-  <meta property="og:site_name" content="凉白开"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="凉白开" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
-
-
 <body>
-<div class="blog">
-  <div class="content">
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-redmine" class="article article-type-post" itemscope itemprop="blogPost">
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">凉白开</a>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/redmine/">Redmine</a>
     </h1>
-    <p class="site-description">Just another Hexo site</p>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/03/12/redmine/" class="article-date">
+  <time datetime="2018-03-11T16:00:00.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Redmine升级和安装操作记录</p>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ol>
+<li>备份3.0.1文件，包括<ul>
+<li>数据库SQL</li>
+<li>files目录中的上传文件</li>
+<li>config目录下配置文件</li>
+<li>plugins目录下所有文件</li>
+</ul>
+</li>
+</ol>
+<h2 id="Windows安装包执行恢复数据步骤"><a href="#Windows安装包执行恢复数据步骤" class="headerlink" title="Windows安装包执行恢复数据步骤"></a>Windows安装包执行恢复数据步骤</h2><ol>
+<li>执行exe文件 (windows)  <a href="https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe" target="_blank" rel="external">https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe</a></li>
+<li><p>创建新数据库 redmine_new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE redmine CHARACTER SET utf8;</div><div class="line">CREATE USER &apos;redmine&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;my_password&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine.* TO &apos;redmine&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>redmine主目录执行db升级命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set RAILS_ENV=production</div><div class="line">bundle exec rake db:migrate</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启服务</p>
+</li>
+</ol>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
+<li>下载最新安装包 3.3.6 <a href="http://www.redmine.org/releases/redmine-3.3.6.tar.gz" target="_blank" rel="external">http://www.redmine.org/releases/redmine-3.3.6.tar.gz</a> (md5: 103bcfc7a0603815130fba8626c97661)，解压文件到安装目录</li>
+<li>将插件文件放到plugins目录</li>
+<li><p>进入安装目录，执行 如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle install --path vendor/bundle --without development test</div></pre></td></tr></table></figure>
+</li>
+<li><p>当前linux系统安装Mysql</p>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE redmine336 CHARACTER SET utf8mb4;</div><div class="line">CREATE USER &apos;redmine336&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;abcd.1234&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine336.* TO &apos;redmine336&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行3.0.1版本的备份SQL,文件 bitnami_redmine.sql</p>
+</li>
+<li>修改config/database.yml，修改production节点下数据库配置为当前设置</li>
+<li><p>执行db迁移命令  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake db:migrate RAILS_ENV=production</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行插件DB迁移命令， 【如新环境无新插件可不执行】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake redmine:plugins:migrate RAILS_ENV=production</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改config/configuration.yml文件中邮件配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">email_delivery:</div><div class="line">    delivery_method: :smtp</div><div class="line">    smtp_settings:</div><div class="line">      address: smtp.163.com</div><div class="line">      port: 25</div><div class="line">      authentication: :login</div><div class="line">      domain: smtp.163.com</div><div class="line">      user_name: ucfdev@163.com</div><div class="line">      password: 7788jira</div><div class="line">      enable_starttls_auto: false</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake generate_secret_token</div></pre></td></tr></table></figure>
+</li>
+<li><p>LINUX文件系统写权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p tmp tmp/pdf public/plugin_assets</div><div class="line">sudo chown -R redmine:redmine files log tmp public/plugin_assets</div><div class="line">sudo chmod -R 755 files log tmp public/plugin_assets</div></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝备份文件目录 files到新环境下</p>
+</li>
+<li>启动测试 ，访问<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rails server webrick -e production -b 0.0.0.0 -p 3001</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h2><ul>
+<li>Redmine 下载地址 <a href="http://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/Download</a></li>
+<li>Redmine 安全问题 <a href="http://www.redmine.org/projects/redmine/wiki/Security_Advisories" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/Security_Advisories</a></li>
+<li>Redmine 安装步骤 <a href="http://www.redmine.org/projects/redmine/wiki/RedmineInstall" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/RedmineInstall</a></li>
+<li>Redmine 升级安装  <a href="http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade</a></li>
+<li>安装包下载地址 <a href="https://bitnami.com/stack/redmine/installer" target="_blank" rel="external">https://bitnami.com/stack/redmine/installer</a><ul>
+<li>WINDOWS <a href="https://bitnami.com/redirect/to/179030/bitnami-redmine-3.4.4-2-windows-installer.exe" target="_blank" rel="external">https://bitnami.com/redirect/to/179030/bitnami-redmine-3.4.4-2-windows-installer.exe</a></li>
+<li>LINUX <a href="https://bitnami.com/redirect/to/179023/bitnami-redmine-3.4.4-2-linux-x64-installer.run" target="_blank" rel="external">https://bitnami.com/redirect/to/179023/bitnami-redmine-3.4.4-2-linux-x64-installer.run</a></li>
+</ul>
+</li>
+<li>手动部署步骤 <a href="https://www.cnblogs.com/colder219/p/7158294.html" target="_blank" rel="external">https://www.cnblogs.com/colder219/p/7158294.html</a></li>
+<li>CentOS7 安装包大致步骤 <a href="http://www.cr173.com/html/50478_1.html" target="_blank" rel="external">http://www.cr173.com/html/50478_1.html</a></li>
+<li>邮件配置 <a href="https://www.jianshu.com/p/e220924d17b6" target="_blank" rel="external">https://www.jianshu.com/p/e220924d17b6</a><br>Install Redmine with Nginx, Puma, and MariaDB/MySQL on Ubuntu 14.04 <a href="https://blog.rudeotter.com/install-redmine-with-nginx-puma-and-mariadbmysql-on-ubuntu-14-04/" target="_blank" rel="external">https://blog.rudeotter.com/install-redmine-with-nginx-puma-and-mariadbmysql-on-ubuntu-14-04/</a></li>
+<li>Nginx 通过 passenger-install-nginx-module 安装的 nginx 和直接安装的 nginx 有什么区别？ <a href="https://ruby-china.org/topics/16303" target="_blank" rel="external">https://ruby-china.org/topics/16303</a></li>
+<li>Redmine 性能优化方案 <a href="https://www.cnblogs.com/ToDoToTry/p/4462609.html" target="_blank" rel="external">https://www.cnblogs.com/ToDoToTry/p/4462609.html</a></li>
+<li>MYSQL ERROR 2003 (HY000): Can’t connect to MySQL server on ‘192.168.10.210’ (111) 解决方法 <a href="https://www.cnblogs.com/zihanxing/p/7049244.html" target="_blank" rel="external">https://www.cnblogs.com/zihanxing/p/7049244.html</a></li>
+<li><p>Runs server as a Daemon -d</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/rvm/gems/ruby-2.3.6/bin/bundle exec /usr/local/rvm/gems/ruby-2.3.6/bin/rails server webrick -e production -b 0.0.0.0 -p 80 -d</div></pre></td></tr></table></figure>
+</li>
+<li><p>Nginx 反向代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name redmine.xxx.com;</div><div class="line">    access_log  logs/redmine_access.log main;</div><div class="line">    error_log  logs/redmine_error.log;</div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://localhost:3000;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>找到占用端口 lsof -i tcp:3000  </p>
+<ul>
+<li>lsof -i:3000</li>
+<li>netstat -anp | grep 80</li>
+<li>杀死进程 kill -9 92372 【92372是pid】</li>
+</ul>
+</li>
+<li>rvm use 2.3.6 –default # 设施rvm默认使用的ruby版本</li>
+<li>Redmine 3.3.x does not support Ruby 2.4. Please use Ruby 2.3. Ruby 2.4 will be supported in upcoming Redmine 3.4.0</li>
+<li><p>检查配置文件，你看到的不一定就是正确的格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RE: occurred Error when start redmine /usr/local/ruby/lib/ruby/2.1.0/psych.rb:370:in `parse&apos;: (&lt;unknown&gt;): mapping values are not allowed in this context at line 20 column 22 (Psych::SyntaxError) - 由 Leonel Iturralde 在 将近 3 年 之前添加</div><div class="line">I think there is a mistake in your yaml files. For example: configuration.yml, database.yml</div><div class="line">Check your yaml files.</div></pre></td></tr></table></figure>
+</li>
+<li><p>Specified key was too long; max key length is 767 bytes  【类似问题需要检查系统要求的数据库版本，创建数据库的时候的编码方式，ruby软件版本】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INNODB utf8 VARCHAR(255)</div><div class="line">INNODB utf8mb4 VARCHAR(191)</div><div class="line">because 767 / 4 ~= 191 , and 767 / 3 ~= 255</div><div class="line">The number of allowed characters just depends on your character set. UTF8 may use up to 3 bytes per character, utf8mb4 up to 4 bytes, and latin1 only 1 byte. Thus for utf8 your key length is limited to 255 characters, since 3*255 = 765 &lt; 767.</div></pre></td></tr></table></figure>
+</li>
+<li><p>sudo su - #切换到root账户</p>
+<ul>
+<li>su redmine #使用某个账户</li>
+</ul>
+</li>
+<li>SecureCRT    sz rz  【sudo spctl –master-disable】<ul>
+<li>Session LOG文件配置  ../Logs/%H/%Y-%M-%D_%h%m%s.log</li>
+</ul>
+</li>
+<li>mysqldump -h132.72.192.432 -P3307 -uroot -p htgl&gt;d:\htgl.sql;</li>
+<li>Redmine开启LDAP认证 <a href="http://www.pfeng.org/archives/580" target="_blank" rel="external">http://www.pfeng.org/archives/580</a></li>
+<li>Redmine LDAP配置 <a href="http://www.redmine.org/projects/redmine/wiki/redmineldap" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/redmineldap</a></li>
+</ul>
+
+      
+
+      
+
+    </div>
   </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">主页</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-        <li><a href="/categories">分类</a></li>
-      
-        <li><a href="/tags">标签</a></li>
-      
-        <li><a href="/about/">关于</a></li>
-      
-        <li><a href="https://dervn.github.io/wiki/">Wiki</a></li>
-      
-    </ul>
+  
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/226/">226</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
   </nav>
-</header>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
 
-    <main class="site-main posts-loop">
-    
-  <article>
-
+      </div>
+      <footer id="footer">
   
-    
-    <h3 class="article-title"><a href="/2017/09/01/20170901-pdf-compress/"><span>PDF压缩，一个简单的付费场景</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/09/01/20170901-pdf-compress/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-31T16:00:00.000Z">
-          2017-09-01
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>需求就是，同事要把一个PDF文件压缩到20MB以内，才能提交到某个平台去做备案。现在就面临一个问题，怎么做？</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/互联网/">互联网</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/PDF/">PDF</a>
-    </span>
-    
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
 
     </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
+    <nav id="mobile-nav">
   
-    
-    <h3 class="article-title"><a href="/2017/09/01/20170901-former-blog/"><span>从前的博客</span></a></h3>
-    
+    <a href="/" class="mobile-nav-link">Home</a>
   
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/09/01/20170901-former-blog/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-31T16:00:00.000Z">
-          2017-09-01
-        </time>
-      </a>
-    </span>
-  </div>
-
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>不觉间时间已经过去了十年有余。</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/博客/">博客</a><a href="/tags/怀旧/">怀旧</a><a href="/tags/幼兔们/">幼兔们</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
+    <a href="/tags" class="mobile-nav-link">Tag</a>
   
-    
-    <h3 class="article-title"><a href="/2017/08/31/20170801-fintech/"><span>互金平台脑图</span></a></h3>
-    
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/08/31/20170801-fintech/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-30T16:00:00.000Z">
-          2017-08-31
-        </time>
-      </a>
-    </span>
-  </div>
-
-
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
   
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>老图一张</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Fintech/">Fintech</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/08/31/20170831-sit-uat-bpm/"><span>SIT、UAT、BPM</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/08/31/20170831-sit-uat-bpm/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-08-30T16:00:00.000Z">
-          2017-08-31
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>SIT（System Integration Testing）是集成测试，UAT（User Acceptance Test）是验收测试</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/SIT/">SIT</a><a href="/tags/UAT/">UAT</a><a href="/tags/BPM/">BPM</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/07/29/20170729-laozishilaihama/"><span>[zt]老子是癞蛤蟆经典语录</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/07/29/20170729-laozishilaihama/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-28T16:00:00.000Z">
-          2017-07-29
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>多读几本书，多看几个人，多经历几件事，多挣几块钱，只求日记末尾的那一天，问心无愧。</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/转帖/">转帖</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/网络小说/">网络小说</a><a href="/tags/读书/">读书</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/07/29/20170729-laozishilaihama-2/"><span>老子是癞蛤蟆的正文书单</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/07/29/20170729-laozishilaihama-2/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-28T16:00:00.000Z">
-          2017-07-29
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>赵家第，江南甲第国士无双。学神，智力超常，理科无敌。围棋国手。二胡天才。精通英语德语。专攻经济，后批阅博览众书，看书必记笔记。有习惯每天看新闻联播。此书单源自贴吧（点击阅读原文），有增减并简单分类，待补全。</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/转帖/">转帖</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/网络小说/">网络小说</a><a href="/tags/读书/">读书</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/07/28/20170728-fenglun-newbook-female-star/"><span>冯仑的新书发布会与女明星</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/07/28/20170728-fenglun-newbook-female-star/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-27T16:00:00.000Z">
-          2017-07-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>冯仑有一句名言:民营企业家追女明星,公司就离死亡不远了。冯仑把他的小明星朋友田朴珺介绍给了他最好的企业家朋友王石。</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/冯仑/">冯仑</a><a href="/tags/女明星/">女明星</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/07/27/20170727-fiddle2-mobile/"><span>抓包客户端数据</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/07/27/20170727-fiddle2-mobile/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-26T16:00:00.000Z">
-          2017-07-27
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Fiddle2是一款功能强大且免费的数据抓包软件，它可以通过设置代理的方式来获取到HTTP程序之间传输的数据。</p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/日常。笔记/">日常。笔记</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/工具/">工具</a><a href="/tags/移动开发/">移动开发</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2015/05/29/lofter_20150529/"><span>20140529</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2015/05/29/lofter_20150529/" rel="bookmark">
-        <time class="entry-date published" datetime="2015-05-29T04:08:28.000Z">
-          2015-05-29
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>“为什么记忆中总有一处地方总是触摸不得的？还记得学校里那颗被我用头撞过的树，我只想告诉世界上的男孩还是男人们：如果有个女孩闭上眼睛把她的手放在你的掌心，请你务必对她好，带着她走过人生的坎坎坷坷，因为她是那么放心的把全身心都交给你了！对她负责，也是对你自己负责。 “</p>
-<p>。。。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/lofter/">lofter</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2014/08/14/lofter_20140814_1/"><span>20140814-1</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2014/08/14/lofter_20140814_1/" rel="bookmark">
-        <time class="entry-date published" datetime="2014-08-14T04:37:49.000Z">
-          2014-08-14
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>几个星期之前，一次机会专门去听嘻哈包袱铺。相声。总体感觉是，矫揉造作，不值一哂。不过真是拉的下面子，如果我有人家一成功夫，不至于混成这般。</p>
-<p>类似艺人，表面功夫和表达能力，演说能力，应变功夫基本都到位了，如果有机会不愁有成名之日。而大凡已成名之人，稍有头脑，哪个方面都不愁混的风生水起。</p>
-<p>所以个人魅力，表达能力，关乎重大。有能力无此，一样难成大器；有此无能力，发展一样可观；无此无能力，一切休谈。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/lofter/">lofter</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  <a href="/" class="pagination-prev">上一页</a>
-  
-  
-  <a href="/page/3/" class="pagination-next">下一页</a>
+    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
-    </main>
+    
 
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2018 dervn
-    
-  </p>
-</footer>
-    
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
   </div>
-</div>
 </body>
 </html>

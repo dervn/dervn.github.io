@@ -1,103 +1,62 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
-  <title>GAE使用CSV格式上传数据 | 凉白开 | Just another Hexo site</title>
-
+  <title>GAE使用CSV格式上传数据 | 凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先,在app.yaml中添加   url: /remote_api&amp;nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py&amp;nbsp; login: admin     添加test_loader.py  import datetimefrom google.appengine.ext import dbfrom">
+<meta name="keywords" content="python,GAE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAE使用CSV格式上传数据">
+<meta property="og:url" content="http://dervn.github.io/2010/05/27/gae-upload-csv/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:description" content="首先,在app.yaml中添加   url: /remote_api&amp;nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py&amp;nbsp; login: admin     添加test_loader.py  import datetimefrom google.appengine.ext import dbfrom">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-06T07:40:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GAE使用CSV格式上传数据">
+<meta name="twitter:description" content="首先,在app.yaml中添加   url: /remote_api&amp;nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py&amp;nbsp; login: admin     添加test_loader.py  import datetimefrom google.appengine.ext import dbfrom">
   
-  <meta name="author" content="dervn">
-  
-
-  
-  <meta name="description" content="首先,在app.yaml中添加
-
-
-url: /remote_api&amp;nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py&amp;nbsp; login: admin  
-
-
-添加test_loader.py
-
-impor">
-  
-
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
   
   
-  <meta name="keywords" content="python,GAE">
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="GAE使用CSV格式上传数据"/>
-
-  <meta property="og:site_name" content="凉白开"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="凉白开" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
-
-
 <body>
-<div class="blog">
-  <div class="content">
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-gae-upload-csv" class="article article-type-post" itemscope itemprop="blogPost">
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">凉白开</a>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GAE使用CSV格式上传数据
     </h1>
-    <p class="site-description">Just another Hexo site</p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">主页</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-        <li><a href="/categories">分类</a></li>
-      
-        <li><a href="/tags">标签</a></li>
-      
-        <li><a href="/about/">关于</a></li>
-      
-        <li><a href="https://dervn.github.io/wiki/">Wiki</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>GAE使用CSV格式上传数据</span></h3>
-    
   
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2010/05/27/gae-upload-csv/" rel="bookmark">
-        <time class="entry-date published" datetime="2010-05-27T00:40:52.000Z">
-          2010-05-27
-        </time>
-      </a>
-    </span>
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2010/05/27/gae-upload-csv/" class="article-date">
+  <time datetime="2010-05-27T00:40:52.000Z" itemprop="datePublished">2010-05-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
   </div>
 
-
-  
-
-  <div class="article-content">
-    <div class="entry">
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
         <p>首先,在app.yaml中添加</p>
 <blockquote>
@@ -119,52 +78,92 @@ impor">
 <p>尝试尝试在尝试。终于好了。基本上是按照官方文档来的，但是不管是不小心还是咋滴，总会有问题。但是所幸，功夫不负有心人！！</p>
 
       
-    </div>
 
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
       
 
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Uncategorized/">Uncategorized</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/python/">python</a><a href="/tags/GAE/">GAE</a>
-    </span>
-    
-
     </div>
-
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2010/05/28/essay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          随便写
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/05/24/e3-81-9f-e3-82-93-e3-81-bd-e3-81-bd-e3-80-8d-e8-92-b2-e5-85-ac-e8-8b-b1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">たんぽぽ」蒲公英</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-    </main>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
 
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2018 dervn
-    
-  </p>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
 </footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+</nav>
     
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
   </div>
-</div>
 </body>
 </html>
