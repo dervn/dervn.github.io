@@ -6,4 +6,4 @@
 	url = git@github.com:dervn/Hacker.git
 [submodule "themes/jane"]
 	path = themes/jane
-	url = https://github.com/hejianxian/hexo-theme-jane.git
+	url = git@github.com:dervn/hexo-theme-jane.git
