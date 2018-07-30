@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MYSQL密码策略设置 | 凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="遇到的问题修改密码的时候遇到错误提示，Your password does not satisfy the current policy requirements。出现问题的原因是密码过于简单。 密码策略变量值查询12345678910111213# 密码相关变量mysql&amp;gt; SHOW VARIABLES LIKE &amp;apos;validate_password%&amp;apos;;+------">
+<meta name="keywords" content="MYSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL密码策略设置">
+<meta property="og:url" content="http://dervn.github.io/2018/03/28/mysql_validate_password/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:description" content="遇到的问题修改密码的时候遇到错误提示，Your password does not satisfy the current policy requirements。出现问题的原因是密码过于简单。 密码策略变量值查询12345678910111213# 密码相关变量mysql&amp;gt; SHOW VARIABLES LIKE &amp;apos;validate_password%&amp;apos;;+------">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-11T11:19:55.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MYSQL密码策略设置">
+<meta name="twitter:description" content="遇到的问题修改密码的时候遇到错误提示，Your password does not satisfy the current policy requirements。出现问题的原因是密码过于简单。 密码策略变量值查询12345678910111213# 密码相关变量mysql&amp;gt; SHOW VARIABLES LIKE &amp;apos;validate_password%&amp;apos;;+------">
+  
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-mysql_validate_password" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MYSQL密码策略设置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/03/28/mysql_validate_password/" class="article-date">
+  <time datetime="2018-03-27T16:00:00.000Z" itemprop="datePublished">2018-03-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术笔记/">技术笔记</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>修改密码的时候遇到错误提示，Your password does not satisfy the current policy requirements。出现问题的原因是密码过于简单。</p>
+<h3 id="密码策略变量值查询"><a href="#密码策略变量值查询" class="headerlink" title="密码策略变量值查询"></a>密码策略变量值查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 密码相关变量</div><div class="line">mysql&gt; SHOW VARIABLES LIKE &apos;validate_password%&apos;;</div><div class="line">+--------------------------------------+-------+</div><div class="line">| Variable_name                        | Value |</div><div class="line">+--------------------------------------+-------+</div><div class="line">| validate_password_dictionary_file    |       |</div><div class="line">| validate_password_length             | 8     |</div><div class="line">| validate_password_mixed_case_count   | 1     |</div><div class="line">| validate_password_number_count       | 1     |</div><div class="line">| validate_password_policy             | LOW   |</div><div class="line">| validate_password_special_char_count | 1     |</div><div class="line">+--------------------------------------+-------+</div><div class="line">6 rows in set (0.01 sec)</div></pre></td></tr></table></figure>
+<h3 id="validate-password-policy的取值"><a href="#validate-password-policy的取值" class="headerlink" title="validate_password_policy的取值"></a>validate_password_policy的取值</h3><table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Tests Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 or LOW</td>
+<td>Length</td>
+</tr>
+<tr>
+<td>1 or MEDIUM</td>
+<td>Length; numeric, lowercase/uppercase, and special characters</td>
+</tr>
+<tr>
+<td>2 or STRONG</td>
+<td>Length; numeric, lowercase/uppercase, and special characters; dictionary file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="更新密码策略安全级别"><a href="#更新密码策略安全级别" class="headerlink" title="更新密码策略安全级别"></a>更新密码策略安全级别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 设置密码策略等级</div><div class="line">SET global validate_password_policy = 0;</div></pre></td></tr></table></figure>
+<h3 id="validate-password-dictionary-file-字典文件"><a href="#validate-password-dictionary-file-字典文件" class="headerlink" title="validate_password_dictionary_file 字典文件"></a>validate_password_dictionary_file 字典文件</h3><p>密码中任意连续4（或者以上）个字符不得是字典中的单词。其值为字典文件路径，可以是相对路径（基于服务器数据目录）。文件内容为小写，每行一词，utf8编码。文件最大1MB。</p>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;abcd.1234&apos;);</div></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li>Password Validation Plugin Options and Variables <a href="https://dev.mysql.com/doc/refman/5.7/en/validate-password-options-variables.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/validate-password-options-variables.html</a></li>
+</ul>
+
+      
+
+      
+
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/30/9999/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          听老干部的话，从“4个9”走起！！
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/23/django-nginx-uwsgi-centos/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Django项目部署</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

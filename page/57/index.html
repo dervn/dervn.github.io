@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-e6-9d-9c-e6-8b-89-e6-8b-89-e5-8d-87-e8-81-8c-e8-ae-b0" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-gae-upload-csv" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,31 +37,42 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/05/13/e6-9d-9c-e6-8b-89-e6-8b-89-e5-8d-87-e8-81-8c-e8-ae-b0/">杜拉拉升职记</a>
+      <a class="article-title" href="/2010/05/27/gae-upload-csv/">GAE使用CSV格式上传数据</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/05/13/e6-9d-9c-e6-8b-89-e6-8b-89-e5-8d-87-e8-81-8c-e8-ae-b0/" class="article-date">
-  <time datetime="2010-05-12T22:38:14.000Z" itemprop="datePublished">2010-05-13</time>
+      <a href="/2010/05/27/gae-upload-csv/" class="article-date">
+  <time datetime="2010-05-27T00:40:52.000Z" itemprop="datePublished">2010-05-27</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/影视。音乐/">影视。音乐</a>
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>影评。电影院看的。没看过原著。</p>
+        <p>首先,在app.yaml中添加</p>
+<blockquote>
 <ul>
-<li><p>没有职场的紧张感觉。</p>
-</li>
-<li><p>老徐确实不年轻了。演一个刚参加工作的新人有点不搭调。</p>
-</li>
+<li>url: /remote_api<br>&nbsp; script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py<br>&nbsp; login: admin  </li>
 </ul>
+</blockquote>
+<p>添加test_loader.py</p>
+<blockquote>
+<p>import datetime<br>from google.appengine.ext import db<br>from google.appengine.tools import bulkloader </p>
+<p>class Test(db.Model):<br>&nbsp; id = db.IntegerProperty()<br>&nbsp; name = db.StringProperty()<br>&nbsp; desc = db.StringProperty() </p>
+<p>class TestLoader(bulkloader.Loader):<br>&nbsp; def <strong>init</strong>(self):<br>&nbsp;&nbsp;&nbsp; bulkloader.Loader.<strong>init</strong>(self, ‘Test’,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(‘id’, int)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,(‘name’, str)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,(‘desc’,lambda x: unicode(x, “utf-8”))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]) </p>
+<p>loaders = [TestLoader]  </p>
+</blockquote>
+<p>上传批处理命令</p>
+<blockquote>
+<p>cd C:\Program Files\Google\google_appengine<br>appcfg.py upload_data –config_file=test_loader.py –filename=test.csv –kind=Test –auth_domain=xxx.com –url=<a href="http://www.xxx.com/remote_api" target="_blank" rel="external">http://www.xxx.com/remote_api</a> D:\xxx  </p>
+</blockquote>
+<p>尝试尝试在尝试。终于好了。基本上是按照官方文档来的，但是不管是不小心还是咋滴，总会有问题。但是所幸，功夫不负有心人！！</p>
 
       
 
@@ -77,7 +88,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/56/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/226/">226</a><a class="extend next" rel="next" href="/page/58/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/56/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/58/">Next &raquo;</a>
     </nav>
   
 </section>
