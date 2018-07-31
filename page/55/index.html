@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-gae-simplejson" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/python-style" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,15 +37,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/05/28/gae-simplejson/">GAE 本地运行问题</a>
+      <a class="article-title" href="/2010/05/29/old/python-style/">python 编程风格</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/05/28/gae-simplejson/" class="article-date">
-  <time datetime="2010-05-28T00:25:38.000Z" itemprop="datePublished">2010-05-28</time>
+      <a href="/2010/05/29/old/python-style/" class="article-date">
+  <time datetime="2010-05-28T23:18:33.000Z" itemprop="datePublished">2010-05-29</time>
 </a>
       
   <div class="article-category">
@@ -55,10 +55,20 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>GAE 本地运行问题</p>
-<p>KeyError: &quot;There is no item named ‘simplejson\\_speedups.pyd’ in the archive&quot;</p>
-<p>删除python的lib\site-packages中simplejson对应的egg文件之后问题解决。</p>
-<p>据说老早的一个问题了。google也不给修复一下。</p>
+        <p>一个典型模块的内部结构： </p>
+<ol>
+<li>起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序  </li>
+</ol>
+<p>示例代码：<br>  <pre>#!/usr/bin/env python</pre></p>
+<p>#coding:utf-8</p>
+<p>&quot;this is a test module&quot;</p>
+<p>import sys<br>import os</p>
+<p>debug = True</p>
+<p>class FooClass(object):<br>    &quot;Foo class&quot;<br>    pass</p>
+<p>def test():<br>    &quot;test function&quot;<br>    foo = FooClass()<br>    if debug:<br>        print ‘ram test()’</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    test()</p>
+<p>&#160;</p>
+<p>参考：google的python编程规范 <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></p>
 
       
 
@@ -74,7 +84,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/54/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/56/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/54/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/56/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -115,11 +125,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

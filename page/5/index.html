@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-20171026-27-bei-jiu" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/redmine" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,54 +37,125 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/26/20171026-27-bei-jiu/">二十七杯酒</a>
+      <a class="article-title" href="/2018/03/12/old/redmine/">Redmine</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2017/10/26/20171026-27-bei-jiu/" class="article-date">
-  <time datetime="2017-10-26T03:21:15.000Z" itemprop="datePublished">2017-10-26</time>
+      <a href="/2018/03/12/old/redmine/" class="article-date">
+  <time datetime="2018-03-11T16:00:00.000Z" itemprop="datePublished">2018-03-12</time>
 </a>
       
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/网络小说/">网络小说</a>
-  </div>
-
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>出自猫腻《间客》一书，为一首古老歌谣，出自联邦国民小学公用教材上。书中只写了数段，后作者应网友要求补足了全文。【猫腻最好找个好的音乐人合作把歌曲做出来呀！！！】</p>
-<p><em>这首诗用平常简单甚至有些拙朴的语言，讲述了一个雨中独饮的年轻人，看着窗外的景致，心思渐飞入山河大川之中，历经数世数地之想像，最终神归己体，忆及逝世去亲人，独潸然而泪下……</em></p>
-<p><strong>全文如下</strong>：</p>
-<p>第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。</p>
-<p>第二杯酒，春风轻漾，叶梢轻拂着我的眉。</p>
-<p>第三杯酒，鸟儿鸣叫，轻啄着我的心。</p>
-<p>第四杯酒，影上窗楣，让我忘了我是谁。</p>
-<p>第五杯酒，少年将飞，穿越层林叠翠……</p>
-<p>第六杯酒，拾柴刀行，又恐惊着动人的山鬼。<br>【第六杯酒，石径弯弯，尽头有位姑娘。石径尽头有位姑娘！姑娘姑娘！那是我的小姑娘！这些都是我的小姑娘！】</p>
-<p>第七杯酒，穿林无声，雾重云冷湿硬了衣襟。</p>
-<p>第八杯酒，雨打蕉叶，鞋上落了只去年的蝉蜕。</p>
-<p>第九杯酒，惘然回首，来时路如路畔细石般断碎。</p>
-<p>第十杯酒，结藤而上，云端上的嘲笑声来自猴儿的嘴。</p>
-<p>十一杯酒，群山苍翠，有个老翁枕石而醉。</p>
-<p>十二杯酒，临渊而窥，山崖还给年岁。</p>
-<p>十三杯酒，蜗牛有角，彼世界如此世界一般疲惫。</p>
-<p>十四杯酒，迷眼渐累，火堆旁的人们渐要沉睡……</p>
-<p>十五杯酒，经闲多年，腐叶下的陶范积着旧旧的灰。</p>
-<p>十六杯酒，鸿落冬原，白雪把爪印视作累赘。</p>
-<p>十七杯酒，望天一眼，云烟消散如云烟。</p>
-<p>十八杯酒，踩地一步，旧灰新雪相融无踪。</p>
-<p>十九杯酒，重见青山，料青山看我亦妩媚。</p>
-<p>二十杯酒，砍柴为篱，种三株桃树。</p>
-<p>二十一杯酒，撷禾为米，再酿两瓮清酒淡如水。</p>
-<p>二十二杯酒，摘花捻汁，把新妇的眉心染醉。</p>
-<p>二十三杯酒，爆竹声声，旧屋新啼不曾觉累。</p>
-<p>二十四杯酒，小鹿呦呦，唤小丫剪几枝梅热两壶酒。</p>
-<p>二十五杯酒，想起父亲，窗外的雨点坠了下来。</p>
-<p>二十六杯酒，乌蝇不飞，若心悸的你我躲在叶下看秋雨渐衰。</p>
-<p>二十七杯酒，弹几点泪，轻轻放下酒杯。</p>
+        <p>Redmine升级和安装操作记录</p>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ol>
+<li>备份3.0.1文件，包括<ul>
+<li>数据库SQL</li>
+<li>files目录中的上传文件</li>
+<li>config目录下配置文件</li>
+<li>plugins目录下所有文件</li>
+</ul>
+</li>
+</ol>
+<h2 id="Windows安装包执行恢复数据步骤"><a href="#Windows安装包执行恢复数据步骤" class="headerlink" title="Windows安装包执行恢复数据步骤"></a>Windows安装包执行恢复数据步骤</h2><ol>
+<li>执行exe文件 (windows)  <a href="https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe" target="_blank" rel="external">https://downloads.bitnami.com/files/stacks/redmine/3.4.4-2/bitnami-redmine-3.4.4-2-windows-installer.exe</a></li>
+<li><p>创建新数据库 redmine_new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE redmine CHARACTER SET utf8;</div><div class="line">CREATE USER &apos;redmine&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;my_password&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine.* TO &apos;redmine&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>redmine主目录执行db升级命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set RAILS_ENV=production</div><div class="line">bundle exec rake db:migrate</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启服务</p>
+</li>
+</ol>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
+<li>下载最新安装包 3.3.6 <a href="http://www.redmine.org/releases/redmine-3.3.6.tar.gz" target="_blank" rel="external">http://www.redmine.org/releases/redmine-3.3.6.tar.gz</a> (md5: 103bcfc7a0603815130fba8626c97661)，解压文件到安装目录</li>
+<li>将插件文件放到plugins目录</li>
+<li><p>进入安装目录，执行 如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle install --path vendor/bundle --without development test</div></pre></td></tr></table></figure>
+</li>
+<li><p>当前linux系统安装Mysql</p>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE redmine336 CHARACTER SET utf8mb4;</div><div class="line">CREATE USER &apos;redmine336&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;abcd.1234&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON redmine336.* TO &apos;redmine336&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行3.0.1版本的备份SQL,文件 bitnami_redmine.sql</p>
+</li>
+<li>修改config/database.yml，修改production节点下数据库配置为当前设置</li>
+<li><p>执行db迁移命令  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake db:migrate RAILS_ENV=production</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行插件DB迁移命令， 【如新环境无新插件可不执行】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake redmine:plugins:migrate RAILS_ENV=production</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改config/configuration.yml文件中邮件配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">email_delivery:</div><div class="line">    delivery_method: :smtp</div><div class="line">    smtp_settings:</div><div class="line">      address: smtp.163.com</div><div class="line">      port: 25</div><div class="line">      authentication: :login</div><div class="line">      domain: smtp.163.com</div><div class="line">      user_name: ucfdev@163.com</div><div class="line">      password: 7788jira</div><div class="line">      enable_starttls_auto: false</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rake generate_secret_token</div></pre></td></tr></table></figure>
+</li>
+<li><p>LINUX文件系统写权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p tmp tmp/pdf public/plugin_assets</div><div class="line">sudo chown -R redmine:redmine files log tmp public/plugin_assets</div><div class="line">sudo chmod -R 755 files log tmp public/plugin_assets</div></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝备份文件目录 files到新环境下</p>
+</li>
+<li>启动测试 ，访问<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle exec rails server webrick -e production -b 0.0.0.0 -p 3001</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h2><ul>
+<li>Redmine 下载地址 <a href="http://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/Download</a></li>
+<li>Redmine 安全问题 <a href="http://www.redmine.org/projects/redmine/wiki/Security_Advisories" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/Security_Advisories</a></li>
+<li>Redmine 安装步骤 <a href="http://www.redmine.org/projects/redmine/wiki/RedmineInstall" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/RedmineInstall</a></li>
+<li>Redmine 升级安装  <a href="http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade</a></li>
+<li>安装包下载地址 <a href="https://bitnami.com/stack/redmine/installer" target="_blank" rel="external">https://bitnami.com/stack/redmine/installer</a><ul>
+<li>WINDOWS <a href="https://bitnami.com/redirect/to/179030/bitnami-redmine-3.4.4-2-windows-installer.exe" target="_blank" rel="external">https://bitnami.com/redirect/to/179030/bitnami-redmine-3.4.4-2-windows-installer.exe</a></li>
+<li>LINUX <a href="https://bitnami.com/redirect/to/179023/bitnami-redmine-3.4.4-2-linux-x64-installer.run" target="_blank" rel="external">https://bitnami.com/redirect/to/179023/bitnami-redmine-3.4.4-2-linux-x64-installer.run</a></li>
+</ul>
+</li>
+<li>手动部署步骤 <a href="https://www.cnblogs.com/colder219/p/7158294.html" target="_blank" rel="external">https://www.cnblogs.com/colder219/p/7158294.html</a></li>
+<li>CentOS7 安装包大致步骤 <a href="http://www.cr173.com/html/50478_1.html" target="_blank" rel="external">http://www.cr173.com/html/50478_1.html</a></li>
+<li>邮件配置 <a href="https://www.jianshu.com/p/e220924d17b6" target="_blank" rel="external">https://www.jianshu.com/p/e220924d17b6</a><br>Install Redmine with Nginx, Puma, and MariaDB/MySQL on Ubuntu 14.04 <a href="https://blog.rudeotter.com/install-redmine-with-nginx-puma-and-mariadbmysql-on-ubuntu-14-04/" target="_blank" rel="external">https://blog.rudeotter.com/install-redmine-with-nginx-puma-and-mariadbmysql-on-ubuntu-14-04/</a></li>
+<li>Nginx 通过 passenger-install-nginx-module 安装的 nginx 和直接安装的 nginx 有什么区别？ <a href="https://ruby-china.org/topics/16303" target="_blank" rel="external">https://ruby-china.org/topics/16303</a></li>
+<li>Redmine 性能优化方案 <a href="https://www.cnblogs.com/ToDoToTry/p/4462609.html" target="_blank" rel="external">https://www.cnblogs.com/ToDoToTry/p/4462609.html</a></li>
+<li>MYSQL ERROR 2003 (HY000): Can’t connect to MySQL server on ‘192.168.10.210’ (111) 解决方法 <a href="https://www.cnblogs.com/zihanxing/p/7049244.html" target="_blank" rel="external">https://www.cnblogs.com/zihanxing/p/7049244.html</a></li>
+<li><p>Runs server as a Daemon -d</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/rvm/gems/ruby-2.3.6/bin/bundle exec /usr/local/rvm/gems/ruby-2.3.6/bin/rails server webrick -e production -b 0.0.0.0 -p 80 -d</div></pre></td></tr></table></figure>
+</li>
+<li><p>Nginx 反向代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name redmine.xxx.com;</div><div class="line">    access_log  logs/redmine_access.log main;</div><div class="line">    error_log  logs/redmine_error.log;</div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://localhost:3000;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>找到占用端口 lsof -i tcp:3000  </p>
+<ul>
+<li>lsof -i:3000</li>
+<li>netstat -anp | grep 80</li>
+<li>杀死进程 kill -9 92372 【92372是pid】</li>
+</ul>
+</li>
+<li>rvm use 2.3.6 –default # 设施rvm默认使用的ruby版本</li>
+<li>Redmine 3.3.x does not support Ruby 2.4. Please use Ruby 2.3. Ruby 2.4 will be supported in upcoming Redmine 3.4.0</li>
+<li><p>检查配置文件，你看到的不一定就是正确的格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RE: occurred Error when start redmine /usr/local/ruby/lib/ruby/2.1.0/psych.rb:370:in `parse&apos;: (&lt;unknown&gt;): mapping values are not allowed in this context at line 20 column 22 (Psych::SyntaxError) - 由 Leonel Iturralde 在 将近 3 年 之前添加</div><div class="line">I think there is a mistake in your yaml files. For example: configuration.yml, database.yml</div><div class="line">Check your yaml files.</div></pre></td></tr></table></figure>
+</li>
+<li><p>Specified key was too long; max key length is 767 bytes  【类似问题需要检查系统要求的数据库版本，创建数据库的时候的编码方式，ruby软件版本】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INNODB utf8 VARCHAR(255)</div><div class="line">INNODB utf8mb4 VARCHAR(191)</div><div class="line">because 767 / 4 ~= 191 , and 767 / 3 ~= 255</div><div class="line">The number of allowed characters just depends on your character set. UTF8 may use up to 3 bytes per character, utf8mb4 up to 4 bytes, and latin1 only 1 byte. Thus for utf8 your key length is limited to 255 characters, since 3*255 = 765 &lt; 767.</div></pre></td></tr></table></figure>
+</li>
+<li><p>sudo su - #切换到root账户</p>
+<ul>
+<li>su redmine #使用某个账户</li>
+</ul>
+</li>
+<li>SecureCRT    sz rz  【sudo spctl –master-disable】<ul>
+<li>Session LOG文件配置  ../Logs/%H/%Y-%M-%D_%h%m%s.log</li>
+</ul>
+</li>
+<li>mysqldump -h132.72.192.432 -P3307 -uroot -p htgl&gt;d:\htgl.sql;</li>
+<li>Redmine开启LDAP认证 <a href="http://www.pfeng.org/archives/580" target="_blank" rel="external">http://www.pfeng.org/archives/580</a></li>
+<li>Redmine LDAP配置 <a href="http://www.redmine.org/projects/redmine/wiki/redmineldap" target="_blank" rel="external">http://www.redmine.org/projects/redmine/wiki/redmineldap</a></li>
+</ul>
 
       
 
@@ -100,7 +171,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -141,11 +212,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

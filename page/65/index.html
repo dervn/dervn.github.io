@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-okuribito" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/note-20100121" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,29 +37,55 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2009/12/17/okuribito/">入殓师</a>
+      <a class="article-title" href="/2010/01/21/old/note-20100121/">Note#20100121</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2009/12/17/okuribito/" class="article-date">
-  <time datetime="2009-12-16T18:20:54.000Z" itemprop="datePublished">2009-12-17</time>
+      <a href="/2010/01/21/old/note-20100121/" class="article-date">
+  <time datetime="2010-01-21T02:02:20.000Z" itemprop="datePublished">2010-01-21</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+    <a class="article-category-link" href="/categories/日常。笔记/">日常。笔记</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="每个男人都需要一个女人。"><a href="#每个男人都需要一个女人。" class="headerlink" title="每个男人都需要一个女人。"></a>每个男人都需要一个女人。</h3><p>幸好，失去大提琴梦想的大悟还有美香陪伴。入行第一天就不得不和一具腐烂尸体打交道的大悟的身边还有美香，活生生的肉体，无关欲望，更是一种依恋。</p>
-<p>澡堂的老板娘死去，店里的常客某烧锅炉的男人都貌似心如死灰。</p>
-<h3 id="每个男人都需要一个职业。"><a href="#每个男人都需要一个职业。" class="headerlink" title="每个男人都需要一个职业。"></a>每个男人都需要一个职业。</h3><p>谋生，以及为我所爱，为人所爱。</p>
-<h3 id="每个男人都需要找到自己手中的石头，以及该守护和坚持的东西。"><a href="#每个男人都需要找到自己手中的石头，以及该守护和坚持的东西。" class="headerlink" title="每个男人都需要找到自己手中的石头，以及该守护和坚持的东西。"></a>每个男人都需要找到自己手中的石头，以及该守护和坚持的东西。</h3><p>爱与家庭</p>
-<p>PS：很喜欢片中那种乡下的小木楼，温馨；不过，日本那公共澡堂就算了，虽然老板娘人不错。</p>
+        <ul>
+<li><p>昨天周三的例行培训是部分总监临时决定给我们讲讲工作中用到的一个代码自动生成工具。他自己开发的。感叹最多的就是，在做一个东西的过程中，这种目的性促使人主动的去学习更多的东西。日积月累，就是一笔巨大无匹的财富。另外，一个正规的软件项目中间有太多的东西需要学习。例如Icon，注册表，文件格式注册等等。</p>
+</li>
+<li><p>重新安装PYTHON和GAESDK之后。搞定了GAE本地调试。中间有个误会，localhost还和SSH翻墙的东西冲突。导致连接重置。关闭代理之后一切OK。</p>
+<blockquote>
+<p>dev_appserver.py –port=9999 myapp #myapp同级目录执行  </p>
+</blockquote>
+</li>
+<li><p>python这东西接触的时间也不短了，从大学时代算起，至少五年的时间了吧。但是一直光说不练。从WEB.PY和GAE开始，正取做几个实际的项目。下面列几个项目的想法（技术难点还是不少的）。</p>
+</li>
+</ul>
+<ul>
+<li>起点书籍抓取，利用GAE以及其中的计划任务来每天同步数据到系统中。<em>   一个在线文件读取器，可以用FLASH，支持读取和检索PDF，DOC，TXT等等一系列格式的文件。</em>   多人博客系统，实现某个博客的域名绑定。使用户可以使用域名的A或者CNAME记录设置来使用系统。另考虑，如何实现通过自定义的DNS来取代GAE的IP，并可自动替换被墙的IP。<em>   微博项目，多IM支持，API支持。</em>   博客，论坛项目如何实现自定义模板，以及插件设计。  </li>
+</ul>
+<ul>
+<li>GAE中使用web.py框架需要编译模板，本地和发布到服务器都需要，而且每次模板修改之后都需要重新编译才会生效。</li>
+</ul>
+<p>web.py对此说明地址： <a href="http://webpy.org/cookbook/templates_on_gae/zh-cn" title="http://webpy.org/cookbook/templates_on_gae/zh-cn" target="_blank" rel="external">http://webpy.org/cookbook/templates_on_gae/zh-cn</a></p>
+<blockquote>
+<p>cd D:\Project\pub9pub9\web<br>template.py –compile D:\Project\pub9pub9\templates  </p>
+</blockquote>
+<ul>
+<li><p>要专业。比如主动要用户提供密码就是一种不专业的行为，当然用户可以提供，但是不要主动向用户索取。</p>
+</li>
+<li><p>网站要注意封搜索机器人的抓取。Robot.txt+IP封锁两手抓。特别是站内如果有音频和其他可下载文件的时候。大量的流量可能因此被浪费掉。</p>
+</li>
+<li><p>晚上要通宵上线一个项目。丫的。</p>
+</li>
+<li><p>这半年小肚子起来了。。</p>
+</li>
+</ul>
 
       
 
@@ -75,7 +101,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/64/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/63/">63</a><a class="page-number" href="/page/64/">64</a><span class="page-number current">65</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/66/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/64/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/63/">63</a><a class="page-number" href="/page/64/">64</a><span class="page-number current">65</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/66/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -116,11 +142,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

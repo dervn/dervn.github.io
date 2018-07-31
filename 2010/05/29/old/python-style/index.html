@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python 编程风格 | 凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个典型模块的内部结构：   起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序    示例代码：  #!/usr/bin/env python #coding:utf-8 &amp;quot;this is a test module&amp;quot; import sysimport os debug = True cla">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 编程风格">
+<meta property="og:url" content="http://dervn.github.io/2010/05/29/old/python-style/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:description" content="一个典型模块的内部结构：   起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序    示例代码：  #!/usr/bin/env python #coding:utf-8 &amp;quot;this is a test module&amp;quot; import sysimport os debug = True cla">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-06T07:40:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 编程风格">
+<meta name="twitter:description" content="一个典型模块的内部结构：   起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序    示例代码：  #!/usr/bin/env python #coding:utf-8 &amp;quot;this is a test module&amp;quot; import sysimport os debug = True cla">
+  
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-old/python-style" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python 编程风格
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2010/05/29/old/python-style/" class="article-date">
+  <time datetime="2010-05-28T23:18:33.000Z" itemprop="datePublished">2010-05-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个典型模块的内部结构： </p>
+<ol>
+<li>起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序  </li>
+</ol>
+<p>示例代码：<br>  <pre>#!/usr/bin/env python</pre></p>
+<p>#coding:utf-8</p>
+<p>&quot;this is a test module&quot;</p>
+<p>import sys<br>import os</p>
+<p>debug = True</p>
+<p>class FooClass(object):<br>    &quot;Foo class&quot;<br>    pass</p>
+<p>def test():<br>    &quot;test function&quot;<br>    foo = FooClass()<br>    if debug:<br>        print ‘ram test()’</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    test()</p>
+<p>&#160;</p>
+<p>参考：google的python编程规范 <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></p>
+
+      
+
+      
+
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2010/05/30/old/the-definitive-guide-to-pylons-study/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Pylons学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/05/28/old/gae-simplejson/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GAE 本地运行问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-20170929-frogman" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/20170930-har-file" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,30 +37,52 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/20170929-frogman/">『深潜之后』摘录</a>
+      <a class="article-title" href="/2017/09/30/old/20170930-har-file/">HAR文件是什么?</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2017/09/29/20170929-frogman/" class="article-date">
-  <time datetime="2017-09-29T08:40:15.000Z" itemprop="datePublished">2017-09-29</time>
+      <a href="/2017/09/30/old/20170930-har-file/" class="article-date">
+  <time datetime="2017-09-30T08:40:15.000Z" itemprop="datePublished">2017-09-30</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/文摘/">文摘</a>
+    <a class="article-category-link" href="/categories/互联网/">互联网</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如果关闭灯光，眼前是一片黑暗，只能听到自己呼出的气泡声，咕噜咕噜，咕噜咕噜。封闭空间潜水最美的时刻之一，便是关闭所有的灯光，陷入那原初的，亘古的，纯粹的黑暗之中。没有人间浮华，没有尘世喧嚣，甚至没有无所不至的光线，无孔不入的声音，只有绝对的黑暗与宁静。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/09/29/20170929-frogman/#more">More...</a>
-          </p>
-        
+        <p>HAR（HTTP Archive HTTP档案规范），是一个用来储存HTTP请求/响应信息的通用文件格式，基于JSON。这种格式的数据可以使HTTP监测工具以一种通用的格式导出所收集的数据，这些数据可以被其他支持HAR的HTTP分析工具（包括Firebug、httpwatch、Fiddler等）所使用，来分析网站的性能瓶颈。</p>
+<p>目前HAR规范最新版本为HAR 1.2。HAR文件必须是UTF-8编码，有无BOM无所谓。如下是一个HAR文件的详细介绍。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"log"</span>: &#123;</div><div class="line">        <span class="attr">"version"</span>: <span class="string">"1.2"</span>,</div><div class="line">        <span class="attr">"creator"</span>: &#123;</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"shun.zheng"</span>,</div><div class="line">            <span class="attr">"version"</span>: <span class="string">"1.1.8"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"pages"</span>: [</div><div class="line">            &#123;</div><div class="line">                "startedDateTime": "2015-09-06T10:02:41.663Z", // 页面开始加载的时间（格式：ISO 8601）</div><div class="line">                "id": "http://www.ihorve.com/", // 页面唯一标示符，即页面url</div><div class="line">                "title": "Horve后花园", // 页面标题</div><div class="line">                "pageTimings": &#123; // 关于页面加载时间的详细信息</div><div class="line">                    "onContentLoad": 1720, // 可选，页面开始加载到页面内容加载完毕之间的毫秒数</div><div class="line">                    "onLoad": 2500, // 可选，页面开始加载到页面onload之间的毫秒数</div><div class="line">                    "comment": "" // 可选，由用户或应用程序提供的注释</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        ],</div><div class="line">        "entries": [ // 包含全部请求的数组，数组的每一项是一条请求的数据构成的对象，根据startedDateTime排序</div><div class="line">            &#123;</div><div class="line">                "startedDateTime": "2015-09-06T10:02:41.645Z", // 请求发出的时间(ISO 8601)</div><div class="line">                "time": 1221, // 该条请求花费的总的毫秒数</div><div class="line">                "request": &#123; // 请求的详细情况</div><div class="line">                    "method": "GET", // 请求方式</div><div class="line">                    "url": "http://www.ihorve.com/", // 请求的url</div><div class="line">                    "httpVersion": "HTTP/1.1", // http协议版本号</div><div class="line">                    "cookies": [], // cookie对象列表</div><div class="line">                    "headers": [ // header信息</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"User-Agent"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Accept"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span></div><div class="line">                        &#125;</div><div class="line">                    ],</div><div class="line">                    "queryString": [], // 查询参数对象的列表</div><div class="line">                    "headersSize": -1, // 从HTTP请求消息的开始，直到（且包括）的主体之前的双CRLF的总字节数，不可用设置为-1</div><div class="line">                    "bodySize": -1 // 消息体的粽子节数，不可用设置为-1</div><div class="line">                &#125;,</div><div class="line">                "response": &#123; // 响应的详细情况</div><div class="line">                    "status": 200, // 状态码</div><div class="line">                    "statusText": "OK",</div><div class="line">                    "httpVersion": "HTTP/1.1",</div><div class="line">                    "cookies": [], // cookie对象列表</div><div class="line">                    "headers": [ // 响应头信息列表</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Server"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"nginx"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Date"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"Sun, 06 Sep 2015 09:59:22 GMT"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Content-Type"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"text/html; charset=UTF-8"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Transfer-Encoding"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"chunked"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Connection"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"keep-alive"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Keep-Alive"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"timeout=60"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"X-Pingback"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"http://www.ihorve.com/xmlrpc.php"</span></div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            <span class="attr">"name"</span>: <span class="string">"Content-Encoding"</span>,</div><div class="line">                            <span class="attr">"value"</span>: <span class="string">"gzip"</span></div><div class="line">                        &#125;</div><div class="line">                    ],</div><div class="line">                    "redirectURL": "", // 从响应头位置重定向目标URL</div><div class="line">                    "headersSize": -1, // 从HTTP响应消息的开始，直到（且包括）的主体之前的双CRLF的总字节数，不可用设置为-1</div><div class="line">                    "bodySize": 65047, // 响应体的字节数</div><div class="line">                    "content": &#123; // 响应体的详细信息</div><div class="line">                        "size": 65047, // 响应体的字节数</div><div class="line">                        "mimeType": "text/html; charset=UTF-8" // 响应体的mimeType</div><div class="line">                    &#125;</div><div class="line">                &#125;,</div><div class="line">                "cache": &#123; // 请求从浏览器缓存的信息</div><div class="line">                    "beforeRequest": &#123;&#125;, // 可选，请求前缓存条目的状态</div><div class="line">                    "afterRequest": &#123;&#125;, // 可选，请求后缓存条目的状态</div><div class="line">                    "comment": ""</div><div class="line">                &#125;,</div><div class="line">                "timings": &#123; // 发送请求到收到响应各阶段的时间，单位均为毫秒</div><div class="line">                    "blocked": 0, // 可选，等待网络连接的时间</div><div class="line">                    "dns": -1, // 可选，dns解析时间，不可用设置为-1</div><div class="line">                    "connect": -1, // 可选，创建TCP连接的时间，不可用设置为-1</div><div class="line">                    "send": 0, // 发送HTTP请求到服务器的时间</div><div class="line">                    "wait": 1126, // 等待响应的时间</div><div class="line">                    "receive": 95, // 从服务器接收或从缓存读取的时间</div><div class="line">                    "ssl": -1 // 可选，SSL/TLS协商需要的时间，不可用设置为-1</div><div class="line">                &#125;,</div><div class="line">                "pageref": "http://www.ihorve.com/" // 可选，唯一，参照的父页面，如果应用不支持页面分组，可忽略此项配置</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>HAR文件如何获取</p>
+<p><img src="/assets/201709/har-file-3.png" alt="图示"></p>
+<hr>
+<p>一篇翻了个开头的文章。 原文地址：<a href="https://blog.stackpath.com/glossary/har-file/" target="_blank" rel="external">https://blog.stackpath.com/glossary/har-file/</a></p>
+<h2 id="HAR文件式什么"><a href="#HAR文件式什么" class="headerlink" title="HAR文件式什么"></a>HAR文件式什么</h2><p><img src="/assets/201709/har-file-1.gif" alt="图示"></p>
+<p>HAR文件格式是个正在不断演化的标准，其中包含的信息不仅灵活而且可扩展。您可以看到一个HAR文件中包含了下列过程所花的时长的分解：</p>
+<ol>
+<li>获取DNS信息需要多长时间</li>
+<li>每个对象请求需要多长时间</li>
+<li>连接服务器需要多长时间</li>
+<li>每个对象的资源文件从服务器传输到浏览器需要多长时间</li>
+</ol>
+<p>数据存储为JSON文件格式，并且从底层数据中解析出有意义的信息不总是简单。但是通过实践，HAR文件可以帮助您迅速识别Web页面关键的性能问题，让您有效地完成站点的开发工作，从而获得最大的成果。</p>
+<h3 id="如何获得HAR文件"><a href="#如何获得HAR文件" class="headerlink" title="如何获得HAR文件"></a>如何获得HAR文件</h3><p>由于HAR文件仍然是个不断变化的格式，支持可能是补丁，获取HAR文件需要做些工作。高质量的监控服务将从它们拿到的样品中获得HAR数据。可以定制自动化测试工具以获得HAR文件。</p>
+<p>可以使用Firefox, Firebug和NetExport使用来为一个特定的URL生成HAR文件。也就是说，如果你使用的是一个新式浏览器，它可以生成一个瀑布图，而不需捕获HAR文件作为临时表示，而这将提供您在即时可用视图中所需的大部分信息。</p>
+<p><strong> Visualizing A HAR FIleAs the file is in a JSON format, this is relatively easy to process with software, but it can be difficult for us humans to visualize. Here are three options that will create visualizations of HAR files: </strong></p>
+<ul>
+<li>softwareishard.com. With this site you can simply paste your HAR File into the field and it will generate a report.</li>
+<li>Your monitoring service. This should provide a visualization of your page loads for each sample they take. Compare your load times from different geographic locations to get a broader view of your customers’ experience.</li>
+<li><strong>Developer tools for browsers</strong>. I developed my first pass of web pages in Chrome. The Network Tab of the developer tools shows the webpage waterfall. Its easy availability makes it a great tool to work with.</li>
+</ul>
+<h3 id="What-To-Look-For-In-A-HAR-File"><a href="#What-To-Look-For-In-A-HAR-File" class="headerlink" title="What To Look For In A HAR File"></a>What To Look For In A HAR File</h3><p><img src="/assets/201709/har-file-example-2.png" alt="图示"></p>
+<p>更多内容查看原文。</p>
+<p>–EOF–</p>
+
       
 
       
@@ -75,7 +97,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -116,11 +138,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

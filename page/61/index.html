@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-a-one-and-a-two" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/micolog" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,34 +37,51 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/01/28/a-one-and-a-two/">[zt]由简南俊想到的</a>
+      <a class="article-title" href="/2010/05/13/old/micolog/">micolog</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/01/28/a-one-and-a-two/" class="article-date">
-  <time datetime="2010-01-27T20:01:45.000Z" itemprop="datePublished">2010-01-28</time>
+      <a href="/2010/05/13/old/micolog/" class="article-date">
+  <time datetime="2010-05-12T19:54:54.000Z" itemprop="datePublished">2010-05-13</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/转帖/">转帖</a>
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://blog.liubaikui.com/media/agJkOXINCxIFTWVkaWEY8qUDDA/46d2e16f-e828-4f46-a175-aa770ce738f0.jpg" alt=""></p>
-<p>今天又看了一遍《一一》，心情还是无法平静。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 已经写不出什么东西了，尽管我才二十二岁，我却曾不止一次的想过再活一次，但其实想想，也真的没有这个必要了。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 太多的事情我没法做到冷静，太多的时候，我浮躁的妄想。太多的时候我常被感性冲昏大脑，刚刚看到NJ面对阿弟小孩满月的时的噪乱所表现出的那份坦然，我异常释怀，心又被触动一样，其实，没有什么好争的，其实没有什么好在意的，其实，其实。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 我想，我该长大了，看到上初中的表弟，学琴，学英语的样子，我也许老了。前天朋友跟我说，他现在越来越低调了，我没法说这样好还是不好，他说，要高调做事低调做人。我说很好。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 谁也想像他说的那样，可真能做到的话倒也豁达了。人总是爱表现自己的，深怕别人不知道自己几斤几两，过一点就是显摆得瑟，欠一点则是暗自谩骂。这样的社会功利性质的事情很多，很多时候没有必要去为别人证明什么，即使别人知道你很好很强大又能怎样，那样只会遭到别人强烈的嫉妒。记得有句话说过：比别人强一点，别人嫉妒你，比别人强很多，就是羡慕了。这个社会呀，做人真难啊。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; NJ是问心无愧的，他把自己能做到的一切都做了，他和大田都是好人，真正的友谊是恐惧欺骗的，然而起初的友谊却又是建立在利益上的，那种脆弱的叫人伤感的情绪，很无辜。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 其实简南俊也是个很感性的人。在那次奇妙的东京之旅中，他毫无保留的说着年轻时的情话，“那个时候，我每天都想看到你，一看不到心里就会感觉怪怪的。”初恋时的记忆总是难忘，即使过了几十年。他们还会一起走过曾经事情发生过的地方，一起说起曾经难忘的话语，一起拥抱那时的感觉。可现实中NJ要承担的责任使他无法面对阿瑞的重来一次，他有老婆，有两个小孩，他不会撒谎，他也不会为了肉体的私欲而重拾那份迟来的爱，他知道，这样做带来的伤害更大。于是，他们一起缄默，一起平淡的接受痛苦。 </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其实，今天我又平静了许多，好像对一切都可以释怀似的，可我又很清楚的知道， 我现在做不到，其中的缘由很难说清，但我知道，我会在做任何事之前想想NJ的那个释怀的画面，也许，我会好一点。</p>
-<p>&nbsp;from&nbsp;<a href="http://www.mtime.com/group/movieview/discussion/414864/" target="_blank" rel="external">http://www.mtime.com/group/movieview/discussion/414864/</a>&nbsp;</p>
+        <p>一直看<a href="http://micolog.xuming.net" target="_blank" rel="external">micolog</a>的模板不爽，终于花了点时间把<a href="http://www.small-island.org/" target="_blank" rel="external">呼呼堂</a>的模板拔下来。现在看着点还像回事。</p>
+<p>改了几处micolog的代码，记一下。免得下次代码升级忘记了：</p>
+<ul>
+<li><p>blog.py中的m_list_pages 读取页面列表前后都有&lt;li&gt;标签写死了，删除之，直接用空格分开。</p>
+</li>
+<li><p>获取Archives的函数给写死只读取12条记录，archives=Archive.all().order(‘-year’).order(‘-month’)#.fetch(12)</p>
+</li>
+<li><p>后台设置中的，默认结构化链接和结构化链接(Permalink)两个项目不明，修改不了。</p>
+</li>
+<li><p>Page的地址竟成了<a href="http://d9.appspot.com/2008/05/6/about.html" title="http://d9.appspot.com/2008/05/6/about.html" target="_blank" rel="external">/2008/05/6/about.html</a> 这种，不爽。</p>
+</li>
+<li><p>micolog现在可算是最好的GAE博客程序了。插件和模板体制都差不多完善了。但是可以改进的地方还是很多的，就如上面说的函数调用的灵活性方面还有待加强。</p>
+</li>
+<li><p>模板亟需能上传，就不用改一次模板就要重新上传整个程序了。</p>
+</li>
+<li><p>程序更新方面，能在线更新就好了</p>
+</li>
+<li><p>一个算不上BUG的大问题，设置了一个模板之后，比如次模板名为ta;然后重新上传程序的时候，ta这个模板被删除了。然后在访问网站，会发现整站崩溃了。这种情况下是不是可以判断一下模板是否存在，否则读取默认或者提示用户重新设置模板。</p>
+</li>
+</ul>
+<p>令，wp导入数据的两个后遗症：</p>
+<ul>
+<li><p>postname中出现中文编码的地方会出现404</p>
+</li>
+<li><p>原有文章中需要p,br标签分开的地方都没加。导致现在无格式。</p>
+</li>
+</ul>
 
       
 
@@ -80,7 +97,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/60/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/62/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/60/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/62/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -121,11 +138,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

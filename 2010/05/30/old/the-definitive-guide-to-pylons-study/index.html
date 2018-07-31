@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pylons学习 | 凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sqlalchemy和authkit 默认安装pylons的时候是没有安装的。因为不需要他们，Pylons也能运行。  创建项目paster create -t&amp;#160; pylons HelloWorld  查看可用的创建项目模板paster create –list-template  项目根目录下面的配置文件：development.ini 开发环境test.ini 测试环境还可以自己创建">
+<meta name="keywords" content="python,pylons">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pylons学习">
+<meta property="og:url" content="http://dervn.github.io/2010/05/30/old/the-definitive-guide-to-pylons-study/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:description" content="sqlalchemy和authkit 默认安装pylons的时候是没有安装的。因为不需要他们，Pylons也能运行。  创建项目paster create -t&amp;#160; pylons HelloWorld  查看可用的创建项目模板paster create –list-template  项目根目录下面的配置文件：development.ini 开发环境test.ini 测试环境还可以自己创建">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-06T07:40:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pylons学习">
+<meta name="twitter:description" content="sqlalchemy和authkit 默认安装pylons的时候是没有安装的。因为不需要他们，Pylons也能运行。  创建项目paster create -t&amp;#160; pylons HelloWorld  查看可用的创建项目模板paster create –list-template  项目根目录下面的配置文件：development.ini 开发环境test.ini 测试环境还可以自己创建">
+  
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-old/the-definitive-guide-to-pylons-study" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pylons学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2010/05/30/old/the-definitive-guide-to-pylons-study/" class="article-date">
+  <time datetime="2010-05-29T19:20:48.000Z" itemprop="datePublished">2010-05-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sqlalchemy和authkit 默认安装pylons的时候是没有安装的。因为不需要他们，Pylons也能运行。 </p>
+<p>创建项目<br>paster create -t&#160; pylons HelloWorld </p>
+<p>查看可用的创建项目模板<br>paster create –list-template </p>
+<p>项目根目录下面的配置文件：<br>development.ini 开发环境<br>test.ini 测试环境<br>还可以自己创建一个production.ini 用户生产环境 </p>
+<p>进入项目目录<br>cd HelloWorld<br>运行项目<br>paster serve –reload development.ini 【注意是serve，不是server，晕了我两分钟】 </p>
+<p>paster的两个特点:<br>1 源代码改变之后可以自动重新加载<br>2 pylons的配置文件可以直接使用。如果使用其他的web服务器，需要PasteDeploy的支持 </p>
+<p>ok.<br>项目开始在<a href="http://localhost:5000/运行了。" target="_blank" rel="external">http://localhost:5000/运行了。</a> </p>
+<p>pylons项目下面的public文件夹就像是Apache的htdocs目录。放入静态文件（图片或者html文件，js,css等均可）可以直接使用。比如：<br><a href="http://localhost:5000/hello.html" target="_blank" rel="external">http://localhost:5000/hello.html</a><br><a href="http://localhost:5000/about/about.html" target="_blank" rel="external">http://localhost:5000/about/about.html</a></p>
+<p>development.ini 配置节点中的host = 127.0.0.1限定了paster只是用于本机访问。<br>生产环境下host=0.0.0.0 就是说任何IP都能访问（这个时候，交互式调试器已经被禁用）。 </p>
+<p>docs目录，存放reStructredText格式的文档，可以使用Sphinx工具来将之转换成HTML格式。 </p>
+<p>lib 目录存放controllers的公共代码，第三方库等 </p>
+<p>websetup.py 此文件存放最终用户安装程序所需要的初始化代码。通常包括创建数据库等。 </p>
+<p>paster controller hello 创建一个名为hello的controller.<br>然后 <a href="http://localhost:5000/hello/index" target="_blank" rel="external">http://localhost:5000/hello/index</a> 就可以直接访问了，输出hello world<br>这种方式与asp.net mvc差别不大。 </p>
+<p>paster controller hello<br>创建HomeController<br>在config/routing.py中添加一行：<br>map.connect(‘/‘, controller=’home’, action=’index’)<br>然后删除public目录中的index.html （或者改名）<br>表示，将项目的首页映射到HomeController/index<br>访问<a href="http://localhost:5000/" target="_blank" rel="external">http://localhost:5000/</a><br>然后输出，Hello World 。替换掉了项目创建时候的首页。 </p>
+<p>HTTP代码： </p>
+<p>200 ok 表示访问没问题<br>401 需要验证用户身份<br>403 被拒绝。没有访问权限。<br>404 URL没有匹配的地址。<br>500 服务发生意外。出现错误。 </p>
+<p>截至the_definitive_guide_to_pylons P42.PDF的张数是42. </p>
+
+      
+
+      
+
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2010/06/09/old/hobberdy-dick/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          《小鬼迪克》的歌曲附加歌词
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/05/29/old/python-style/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python 编程风格</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

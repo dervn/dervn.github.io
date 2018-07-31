@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-e5-85-b3-e4-ba-8e-e9-87-8d-e6-9e-84" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/e4-b8-89-e7-a7-8d-e7-b1-bb-e5-9e-8b-e7-9a-84web-e5-b9-b3-e5-8f-b0" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,31 +37,40 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2007/09/19/e5-85-b3-e4-ba-8e-e9-87-8d-e6-9e-84/">关于重构</a>
+      <a class="article-title" href="/2007/09/20/old/e4-b8-89-e7-a7-8d-e7-b1-bb-e5-9e-8b-e7-9a-84web-e5-b9-b3-e5-8f-b0/">三种类型的Web平台</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2007/09/19/e5-85-b3-e4-ba-8e-e9-87-8d-e6-9e-84/" class="article-date">
-  <time datetime="2007-09-19T02:17:55.000Z" itemprop="datePublished">2007-09-19</time>
+      <a href="/2007/09/20/old/e4-b8-89-e7-a7-8d-e7-b1-bb-e5-9e-8b-e7-9a-84web-e5-b9-b3-e5-8f-b0/" class="article-date">
+  <time datetime="2007-09-19T19:41:59.000Z" itemprop="datePublished">2007-09-20</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/日常。笔记/">日常。笔记</a>
+    <a class="article-category-link" href="/categories/互联网/">互联网</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>翻<em>CC</em>,发现自己对重构和重写理解的还不是很到位，遂有此记录。</p>
-<p>Martin Flower下的定义：<strong>在不改变软件外在行为的前提下，对其内部结构进行改变 ，使之更容易理解，并便于修改</strong>。</p>
-<p>不宜重构的情况：</p>
+        <p>Marc Andreessen goes on to identify three types of platforms:</p>
 <ul>
-<li>不要把重构当作先写后改的代名词。那些修补破旧代码的程序员不是在重构，而是在拼凑代码，希望能让软件跑起来。</li>
-<li>大规模的重构孕育这灾难。这个时候就需要考虑是不是需要推到重来？</li>
+<li><strong>Access API</strong> - Where data is pulled From a service and reconstituted to create something new or add value to something else (think Flickr, or Google Maps)</li>
+<li><strong>Plug-in API</strong> - Where developers plug their applications directly into the platform (think Facebook, Firefox, or, well, Google Maps again (Mapplets))</li>
+<li><strong>Runtime Environment</strong> - like a plug-in API but Where code is executed directly on the platform, and the “platform itself handles everything required to run your application on your behalf” (think Andreessen’s own Ning, Second Life, or Salesforce.com)<br>可访问的，插件式的，和提供运行环境的API。</li>
 </ul>
+<p>对于第一种而言，只是提供了一种可访问的服务，可以获取和更新数据，这是平台的基础的层次；对于第二种插件式的平台，开发这可以直降将自己的应用程序植入进去；第三种是以插件为基础，代码直接在平台上面运行，由运行环境处理与你的应用程序相关的一切。</p>
+<p>说是三种平台，其实也是逐步递进的三种层次的平台。第一和第二层次的时候，如果平台没有了，那么你的应用程序依然可以独立运行，而对于第三种层次，平台没有了，那么就什么都没有了。所有对于这种网络的运行环境，必须给人充分的信任感，才会有人在上面开发和运行各种应用程序。</p>
+<p>If the entire web is a platform, why would a developer choose to cede control over his app by locking himself into a single, third-party platform? The answer is that these platforms give developers access to something they can’t easily build themselves – such as users, data, or development tools. The more open the platform, though, and the more in control the developer remains, I think the more attractive they will be to application creators.</p>
+<p>如果整个的网络就是一个平台，那么为什么开发者会选择放弃自己应用程序的控制力，而将自己锁定在一个独立的第三方的平台上面呢？答案就是这些平台给了开发者他们不能很容易获取得到的一些东西，就行用户，数据或者还有开发工具之类。平台越开放，虽然开发者的控制力会越减弱，我想，应用程序的建立者会越活跃。</p>
+<p>就像Facebook,开发者获取的最大的资源也许就是用户了，通过使用者之间的推荐，能快速的积累应用工具的用户，推动其增长。</p>
+<p>当然了，用户会为之付费的是满足了他们需求的应用程序或者解决方案，而不是某种平台。</p>
+<p>“Lots and lots of people have opinions about platforms.”</p>
+<p>也许每个人都有自己的关于平台的想法。</p>
+<p>能说出你心中的想法吗？</p>
+<p>原文链接：<a href="http://www.readwriteweb.com/archives/platforms_on_the_web_are_platforms_on_a_platform.php" title="Link to: Platforms on the Web are Platforms on a Platform" target="_blank" rel="external">Platforms on the Web are Platforms on a Platform</a></p>
 
       
 
@@ -77,7 +86,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/177/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/176/">176</a><a class="page-number" href="/page/177/">177</a><span class="page-number current">178</span><a class="page-number" href="/page/179/">179</a><a class="page-number" href="/page/180/">180</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/179/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/177/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/176/">176</a><a class="page-number" href="/page/177/">177</a><span class="page-number current">178</span><a class="page-number" href="/page/179/">179</a><a class="page-number" href="/page/180/">180</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/179/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -118,11 +127,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

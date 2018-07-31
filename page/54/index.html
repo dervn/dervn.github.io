@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python-style" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/the-definitive-guide-to-pylons-study" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,15 +37,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/05/29/python-style/">python 编程风格</a>
+      <a class="article-title" href="/2010/05/30/old/the-definitive-guide-to-pylons-study/">Pylons学习</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/05/29/python-style/" class="article-date">
-  <time datetime="2010-05-28T23:18:33.000Z" itemprop="datePublished">2010-05-29</time>
+      <a href="/2010/05/30/old/the-definitive-guide-to-pylons-study/" class="article-date">
+  <time datetime="2010-05-29T19:20:48.000Z" itemprop="datePublished">2010-05-30</time>
 </a>
       
   <div class="article-category">
@@ -55,20 +55,23 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一个典型模块的内部结构： </p>
-<ol>
-<li>起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序  </li>
-</ol>
-<p>示例代码：<br>  <pre>#!/usr/bin/env python</pre></p>
-<p>#coding:utf-8</p>
-<p>&quot;this is a test module&quot;</p>
-<p>import sys<br>import os</p>
-<p>debug = True</p>
-<p>class FooClass(object):<br>    &quot;Foo class&quot;<br>    pass</p>
-<p>def test():<br>    &quot;test function&quot;<br>    foo = FooClass()<br>    if debug:<br>        print ‘ram test()’</p>
-<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    test()</p>
-<p>&#160;</p>
-<p>参考：google的python编程规范 <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></p>
+        <p>sqlalchemy和authkit 默认安装pylons的时候是没有安装的。因为不需要他们，Pylons也能运行。 </p>
+<p>创建项目<br>paster create -t&#160; pylons HelloWorld </p>
+<p>查看可用的创建项目模板<br>paster create –list-template </p>
+<p>项目根目录下面的配置文件：<br>development.ini 开发环境<br>test.ini 测试环境<br>还可以自己创建一个production.ini 用户生产环境 </p>
+<p>进入项目目录<br>cd HelloWorld<br>运行项目<br>paster serve –reload development.ini 【注意是serve，不是server，晕了我两分钟】 </p>
+<p>paster的两个特点:<br>1 源代码改变之后可以自动重新加载<br>2 pylons的配置文件可以直接使用。如果使用其他的web服务器，需要PasteDeploy的支持 </p>
+<p>ok.<br>项目开始在<a href="http://localhost:5000/运行了。" target="_blank" rel="external">http://localhost:5000/运行了。</a> </p>
+<p>pylons项目下面的public文件夹就像是Apache的htdocs目录。放入静态文件（图片或者html文件，js,css等均可）可以直接使用。比如：<br><a href="http://localhost:5000/hello.html" target="_blank" rel="external">http://localhost:5000/hello.html</a><br><a href="http://localhost:5000/about/about.html" target="_blank" rel="external">http://localhost:5000/about/about.html</a></p>
+<p>development.ini 配置节点中的host = 127.0.0.1限定了paster只是用于本机访问。<br>生产环境下host=0.0.0.0 就是说任何IP都能访问（这个时候，交互式调试器已经被禁用）。 </p>
+<p>docs目录，存放reStructredText格式的文档，可以使用Sphinx工具来将之转换成HTML格式。 </p>
+<p>lib 目录存放controllers的公共代码，第三方库等 </p>
+<p>websetup.py 此文件存放最终用户安装程序所需要的初始化代码。通常包括创建数据库等。 </p>
+<p>paster controller hello 创建一个名为hello的controller.<br>然后 <a href="http://localhost:5000/hello/index" target="_blank" rel="external">http://localhost:5000/hello/index</a> 就可以直接访问了，输出hello world<br>这种方式与asp.net mvc差别不大。 </p>
+<p>paster controller hello<br>创建HomeController<br>在config/routing.py中添加一行：<br>map.connect(‘/‘, controller=’home’, action=’index’)<br>然后删除public目录中的index.html （或者改名）<br>表示，将项目的首页映射到HomeController/index<br>访问<a href="http://localhost:5000/" target="_blank" rel="external">http://localhost:5000/</a><br>然后输出，Hello World 。替换掉了项目创建时候的首页。 </p>
+<p>HTTP代码： </p>
+<p>200 ok 表示访问没问题<br>401 需要验证用户身份<br>403 被拒绝。没有访问权限。<br>404 URL没有匹配的地址。<br>500 服务发生意外。出现错误。 </p>
+<p>截至the_definitive_guide_to_pylons P42.PDF的张数是42. </p>
 
       
 
@@ -84,7 +87,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/53/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/52/">52</a><a class="page-number" href="/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/55/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/53/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/52/">52</a><a class="page-number" href="/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/55/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -125,11 +128,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

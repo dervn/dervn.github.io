@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-one-weekend" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/code-snippets" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,15 +37,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2009/09/07/one-weekend/">周末</a>
+      <a class="article-title" href="/2009/09/07/old/code-snippets/">几个代码片段</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2009/09/07/one-weekend/" class="article-date">
-  <time datetime="2009-09-06T21:25:36.000Z" itemprop="datePublished">2009-09-07</time>
+      <a href="/2009/09/07/old/code-snippets/" class="article-date">
+  <time datetime="2009-09-07T01:32:32.000Z" itemprop="datePublished">2009-09-07</time>
 </a>
       
   <div class="article-category">
@@ -55,28 +55,23 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="周六"><a href="#周六" class="headerlink" title="周六"></a>周六</h3><p>CPUG会课</p>
-<ul>
-<li><p>见到了limodou,清风等大牛</p>
+        <ul>
+<li><p>默认图片<br><pre><img src="/images/DMA001.jpg" alt=""></pre><br>图片不存在，则使用默认图片替换。</p>
 </li>
-<li><p>limodou的uliweb框架很赞，等正式版本出来之后可以好好学学。虽说是在重新造轮子，但是用他的话说就是“造自己的轮子，让别人说去吧”。只有自己重复了这个造轮子的过程，才能更深的体会其中的技术，只是单纯的使用，可能很多东西都不明白。这能给自己什么启示呢？仅仅是了解技术应用的皮毛，混不下去的。。</p>
+<li><p>JQuery判断页面元素是否隐藏</p>
+<pre>if($("#main-fl").is(":hidden"))   {//。。。。}</pre>
 </li>
-<li><p>关于web框架，web.py 军刀，小巧实用；django 主流 一站式开发；pylons 使用各种组件组装出来的框架。这三种是我认为必学的框架，当然一通百通，首先要精通一种</p>
-</li>
-<li><p>一切都是瞎扯,动手做吧.</p>
-</li>
-<li><p>海淀书城 很海皮，买了书法练字纸、数本字帖  对魏碑比较感兴趣，感觉挺合心意 。《龙门二十品》，如果练字有成，再研读这本。</p>
+<li><p>多行某列值相加</p>
 </li>
 </ul>
-<h3 id="周日"><a href="#周日" class="headerlink" title="周日"></a>周日</h3><ul>
-<li><p>十点多才起，原计划去前门玩的，天阴沉，有雨，未果。</p>
-</li>
-<li><p>出门去超市买了一堆吃的，然后窝在家里看小说。</p>
-</li>
-<li><p>在书店突然发现《厚黑学》，找了一个不错的版本，回家下了订单。必须精读！</p>
-</li>
-</ul>
-
+<p>id name<br>1  a<br>2  b<br>3  c<br>4  d<br>5  e<br>6  f</p>
+<p>sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef</p>
+<p>解答：</p>
+<pre>DECLARE @str AS VARCHAR(5000)
+SELECT @str = ''
+SELECT @str = @str + LTRIM(name)
+FROM   T
+SELECT @str</pre>
       
 
       
@@ -91,7 +86,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/82/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/81/">81</a><a class="page-number" href="/page/82/">82</a><span class="page-number current">83</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="space">&hellip;</span><a class="page-number" href="/page/228/">228</a><a class="extend next" rel="next" href="/page/84/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/82/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/81/">81</a><a class="page-number" href="/page/82/">82</a><span class="page-number current">83</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="space">&hellip;</span><a class="page-number" href="/page/229/">229</a><a class="extend next" rel="next" href="/page/84/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -132,11 +127,11 @@
   
     <a href="/tags" class="mobile-nav-link">Tag</a>
   
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
     <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
   
     <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
-  
-    <a href="/about/" class="mobile-nav-link">About</a>
   
 </nav>
     

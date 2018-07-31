@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>几个代码片段 | 凉白开</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="默认图片图片不存在，则使用默认图片替换。  JQuery判断页面元素是否隐藏 if($(&quot;#main-fl&quot;).is(&quot;:hidden&quot;))   {//。。。。}  多行某列值相加   id name1  a2  b3  c4  d5  e6  f sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef 解答： DECLARE @str AS VARCHAR(">
+<meta name="keywords" content="JQuery,JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="几个代码片段">
+<meta property="og:url" content="http://dervn.github.io/2009/09/07/old/code-snippets/index.html">
+<meta property="og:site_name" content="凉白开">
+<meta property="og:description" content="默认图片图片不存在，则使用默认图片替换。  JQuery判断页面元素是否隐藏 if($(&quot;#main-fl&quot;).is(&quot;:hidden&quot;))   {//。。。。}  多行某列值相加   id name1  a2  b3  c4  d5  e6  f sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef 解答： DECLARE @str AS VARCHAR(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://dervn.github.io/images/DMA001.jpg">
+<meta property="og:updated_time" content="2017-09-06T07:40:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="几个代码片段">
+<meta name="twitter:description" content="默认图片图片不存在，则使用默认图片替换。  JQuery判断页面元素是否隐藏 if($(&quot;#main-fl&quot;).is(&quot;:hidden&quot;))   {//。。。。}  多行某列值相加   id name1  a2  b3  c4  d5  e6  f sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef 解答： DECLARE @str AS VARCHAR(">
+<meta name="twitter:image" content="http://dervn.github.io/images/DMA001.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="凉白开" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-old/code-snippets" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      几个代码片段
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2009/09/07/old/code-snippets/" class="article-date">
+  <time datetime="2009-09-07T01:32:32.000Z" itemprop="datePublished">2009-09-07</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/日常。笔记/">日常。笔记</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>默认图片<br><pre><img src="/images/DMA001.jpg" alt=""></pre><br>图片不存在，则使用默认图片替换。</p>
+</li>
+<li><p>JQuery判断页面元素是否隐藏</p>
+<pre>if($("#main-fl").is(":hidden"))   {//。。。。}</pre>
+</li>
+<li><p>多行某列值相加</p>
+</li>
+</ul>
+<p>id name<br>1  a<br>2  b<br>3  c<br>4  d<br>5  e<br>6  f</p>
+<p>sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef</p>
+<p>解答：</p>
+<pre>DECLARE @str AS VARCHAR(5000)
+SELECT @str = ''
+SELECT @str = @str + LTRIM(name)
+FROM   T
+SELECT @str</pre>
+      
+
+      
+
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2009/09/09/old/photo-by-m8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          手机拍的几张PP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/09/07/old/one-weekend/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">周末</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/dervn" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2018 dervn 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="/about/" class="mobile-nav-link">About</a>
+  
+    <a href="https://github.com/dervn" class="mobile-nav-link">Github</a>
+  
+    <a href="https://dervn.github.io/wiki/" class="mobile-nav-link">Wiki</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
