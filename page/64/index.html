@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-old/09-year-summary-0" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/micolog" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,15 +37,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/01/25/old/09-year-summary-0/">年终总结 0</a>
+      <a class="article-title" href="/2010/05/13/old/micolog/">micolog</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/01/25/old/09-year-summary-0/" class="article-date">
-  <time datetime="2010-01-25T01:22:42.000Z" itemprop="datePublished">2010-01-25</time>
+      <a href="/2010/05/13/old/micolog/" class="article-date">
+  <time datetime="2010-05-12T19:54:54.000Z" itemprop="datePublished">2010-05-13</time>
 </a>
       
   <div class="article-category">
@@ -55,10 +55,33 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一直在踌躇着是不是也给总结一下。</p>
-<p>刚才公司发了09年度公司绩效评优结果邮件，一下子突然感觉，这一年过的其实挺那啥的。</p>
-<p>一时之间还找不到一个合适的词形容我的心情，总之有点沮丧。</p>
-<p>【待续】</p>
+        <p>一直看<a href="http://micolog.xuming.net" target="_blank" rel="external">micolog</a>的模板不爽，终于花了点时间把<a href="http://www.small-island.org/" target="_blank" rel="external">呼呼堂</a>的模板拔下来。现在看着点还像回事。</p>
+<p>改了几处micolog的代码，记一下。免得下次代码升级忘记了：</p>
+<ul>
+<li><p>blog.py中的m_list_pages 读取页面列表前后都有&lt;li&gt;标签写死了，删除之，直接用空格分开。</p>
+</li>
+<li><p>获取Archives的函数给写死只读取12条记录，archives=Archive.all().order(‘-year’).order(‘-month’)#.fetch(12)</p>
+</li>
+<li><p>后台设置中的，默认结构化链接和结构化链接(Permalink)两个项目不明，修改不了。</p>
+</li>
+<li><p>Page的地址竟成了<a href="http://d9.appspot.com/2008/05/6/about.html" title="http://d9.appspot.com/2008/05/6/about.html" target="_blank" rel="external">/2008/05/6/about.html</a> 这种，不爽。</p>
+</li>
+<li><p>micolog现在可算是最好的GAE博客程序了。插件和模板体制都差不多完善了。但是可以改进的地方还是很多的，就如上面说的函数调用的灵活性方面还有待加强。</p>
+</li>
+<li><p>模板亟需能上传，就不用改一次模板就要重新上传整个程序了。</p>
+</li>
+<li><p>程序更新方面，能在线更新就好了</p>
+</li>
+<li><p>一个算不上BUG的大问题，设置了一个模板之后，比如次模板名为ta;然后重新上传程序的时候，ta这个模板被删除了。然后在访问网站，会发现整站崩溃了。这种情况下是不是可以判断一下模板是否存在，否则读取默认或者提示用户重新设置模板。</p>
+</li>
+</ul>
+<p>令，wp导入数据的两个后遗症：</p>
+<ul>
+<li><p>postname中出现中文编码的地方会出现404</p>
+</li>
+<li><p>原有文章中需要p,br标签分开的地方都没加。导致现在无格式。</p>
+</li>
+</ul>
 
       
 
@@ -74,7 +97,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/63/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/230/">230</a><a class="extend next" rel="next" href="/page/65/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/63/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/232/">232</a><a class="extend next" rel="next" href="/page/65/">Next &raquo;</a>
     </nav>
   
 </section>

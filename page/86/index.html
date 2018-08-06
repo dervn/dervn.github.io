@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-old/tudou-cuigeng" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/code-snippets" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,15 +37,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2009/09/04/old/tudou-cuigeng/">土豆的催票贴</a>
+      <a class="article-title" href="/2009/09/07/old/code-snippets/">几个代码片段</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2009/09/04/old/tudou-cuigeng/" class="article-date">
-  <time datetime="2009-09-04T06:11:51.000Z" itemprop="datePublished">2009-09-04</time>
+      <a href="/2009/09/07/old/code-snippets/" class="article-date">
+  <time datetime="2009-09-07T01:32:32.000Z" itemprop="datePublished">2009-09-07</time>
 </a>
       
   <div class="article-category">
@@ -55,13 +55,23 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#160;</p>
-<blockquote>
-<p>官道能够在参军的领导下，一天猛飙七八百票，引动月票榜上诸侯的侧目与震动！<br>我们的斗破，我们的斗者们，我们是否也能拥有这股气荡山河的力量？<br>所有的斗破读者，如果你认同苍穹，那么你便是一名充满热血的斗者！<br>月票榜上，群魔乱舞，唐门子弟，白袍妖孽，横行匪军，唐军官迷，我们的斗破，也有着属于它的热血斗者！  </p>
-</blockquote>
-<p>嘿嘿，你知道里面都涉及到哪几本书么？</p>
-<p>唐门，妖孽，匪军。。一本书就是一个圈子，一种文化，各位都是优秀的写手，各有拥傍。月票榜上，出色的作者已经不只是比拼文笔，更要能调动读者的积极性，更要和读者有良好的互动。</p>
-
+        <ul>
+<li><p>默认图片<br><pre><img src="/images/DMA001.jpg" alt=""></pre><br>图片不存在，则使用默认图片替换。</p>
+</li>
+<li><p>JQuery判断页面元素是否隐藏</p>
+<pre>if($("#main-fl").is(":hidden"))   {//。。。。}</pre>
+</li>
+<li><p>多行某列值相加</p>
+</li>
+</ul>
+<p>id name<br>1  a<br>2  b<br>3  c<br>4  d<br>5  e<br>6  f</p>
+<p>sql一个表 有 ID ,NAME 两列    怎么样写语句  结果为    abcdef</p>
+<p>解答：</p>
+<pre>DECLARE @str AS VARCHAR(5000)
+SELECT @str = ''
+SELECT @str = @str + LTRIM(name)
+FROM   T
+SELECT @str</pre>
       
 
       
@@ -76,7 +86,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/85/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="page-number current">86</span><a class="page-number" href="/page/87/">87</a><a class="page-number" href="/page/88/">88</a><span class="space">&hellip;</span><a class="page-number" href="/page/230/">230</a><a class="extend next" rel="next" href="/page/87/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/85/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="page-number current">86</span><a class="page-number" href="/page/87/">87</a><a class="page-number" href="/page/88/">88</a><span class="space">&hellip;</span><a class="page-number" href="/page/232/">232</a><a class="extend next" rel="next" href="/page/87/">Next &raquo;</a>
     </nav>
   
 </section>

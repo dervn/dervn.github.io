@@ -29,7 +29,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-old/essay" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-old/python-style" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -37,37 +37,38 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/05/28/old/essay/">随便写</a>
+      <a class="article-title" href="/2010/05/29/old/python-style/">python 编程风格</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2010/05/28/old/essay/" class="article-date">
-  <time datetime="2010-05-27T17:40:10.000Z" itemprop="datePublished">2010-05-28</time>
+      <a href="/2010/05/29/old/python-style/" class="article-date">
+  <time datetime="2010-05-28T23:18:33.000Z" itemprop="datePublished">2010-05-29</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/日常。笔记/">日常。笔记</a>
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>积累&amp;经营</strong></p>
+        <p>一个典型模块的内部结构： </p>
 <ol>
-<li>一个名字。</li>
-<li>一个网站或者自己的博客。大本营所在。不求出名，但求有块地。</li>
-<li>一个框架或者是一个集大成的项目。编程若干年，总的积累点东西，才能上进。</li>
-<li>一本书。只有精通某种技术才能写出东西。  </li>
+<li>起始行2.  模块文档(文档字符串)3.  模块导入4.  (全局)变量定义5.  类定义(若有)6.  函数定义(若有)7.  主程序  </li>
 </ol>
-<p><strong>google reader</strong></p>
-<ol>
-<li>folder 没法更改名字。期待能像分类那么管理</li>
-<li>使用Feed站点本身的favicon标记。现在已经有了这功能。但是还是经常显示不出来。  </li>
-</ol>
-<p>发现N多的站点顶级域名没法访问，但是WWW子域名可以。无语。还大站呢。</p>
+<p>示例代码：<br>  <pre>#!/usr/bin/env python</pre></p>
+<p>#coding:utf-8</p>
+<p>&quot;this is a test module&quot;</p>
+<p>import sys<br>import os</p>
+<p>debug = True</p>
+<p>class FooClass(object):<br>    &quot;Foo class&quot;<br>    pass</p>
+<p>def test():<br>    &quot;test function&quot;<br>    foo = FooClass()<br>    if debug:<br>        print ‘ram test()’</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    test()</p>
+<p>&#160;</p>
+<p>参考：google的python编程规范 <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></p>
 
       
 
@@ -83,7 +84,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/57/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="page-number current">58</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/page/230/">230</a><a class="extend next" rel="next" href="/page/59/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/57/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="page-number current">58</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/page/232/">232</a><a class="extend next" rel="next" href="/page/59/">Next &raquo;</a>
     </nav>
   
 </section>
